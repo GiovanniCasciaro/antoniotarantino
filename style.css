@@ -24,6 +24,209 @@ body {
   line-height: 1.6;
 }
 
+body.is-coming-soon {
+  background: #0b1120;
+  color: #e2e8f0;
+}
+
+body.is-coming-soon header,
+body.is-coming-soon main,
+body.is-coming-soon footer {
+  display: none;
+}
+
+.coming-soon {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: radial-gradient(circle at top, #1e293b 0%, #0b1120 70%);
+}
+
+body.is-coming-soon .coming-soon {
+  display: flex;
+}
+
+.coming-soon-content {
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+}
+
+.stay-tuned {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  letter-spacing: 2px;
+  animation: stay-tuned-pulse 2.6s ease-in-out infinite;
+}
+
+.coming-soon p {
+  margin: 0;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.brand-shine {
+  display: inline-flex;
+  gap: 4px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.brand-shine span {
+  display: inline-block;
+  color: rgba(226, 232, 240, 0.45);
+  text-shadow: none;
+  animation: letter-glow 2.2s ease-in-out infinite;
+}
+
+.brand-shine span:nth-child(1) { animation-delay: 0s; }
+.brand-shine span:nth-child(2) { animation-delay: 0.08s; }
+.brand-shine span:nth-child(3) { animation-delay: 0.16s; }
+.brand-shine span:nth-child(4) { animation-delay: 0.24s; }
+.brand-shine span:nth-child(5) { animation-delay: 0.32s; }
+.brand-shine span:nth-child(6) { animation-delay: 0.4s; }
+.brand-shine span:nth-child(7) { animation-delay: 0.48s; }
+.brand-shine span:nth-child(8) { animation-delay: 0.56s; }
+.brand-shine span:nth-child(9) { animation-delay: 0.64s; }
+.brand-shine span:nth-child(10) { animation-delay: 0.72s; }
+.brand-shine span:nth-child(11) { animation-delay: 0.8s; }
+.brand-shine span:nth-child(12) { animation-delay: 0.88s; }
+.brand-shine span:nth-child(13) { animation-delay: 0.96s; }
+.brand-shine span:nth-child(14) { animation-delay: 1.04s; }
+.brand-shine span:nth-child(15) { animation-delay: 1.12s; }
+.brand-shine span:nth-child(16) { animation-delay: 1.2s; }
+.brand-shine span:nth-child(17) { animation-delay: 1.28s; }
+.brand-shine span:nth-child(18) { animation-delay: 1.36s; }
+
+@keyframes letter-glow {
+  0%,
+  100% {
+    color: rgba(226, 232, 240, 0.45);
+    text-shadow: none;
+    transform: translateY(0);
+  }
+  50% {
+    color: #e2e8f0;
+    text-shadow: 0 0 12px rgba(159, 196, 255, 0.9);
+    transform: translateY(-2px);
+  }
+}
+
+.hourglass {
+  position: relative;
+  width: 72px;
+  height: 110px;
+  border-radius: 14px;
+  border: 2px solid rgba(226, 232, 240, 0.4);
+  overflow: hidden;
+}
+
+.hourglass::before,
+.hourglass::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+}
+
+.hourglass::before {
+  top: 10px;
+  border-bottom: 44px solid rgba(226, 232, 240, 0.08);
+}
+
+.hourglass::after {
+  bottom: 10px;
+  border-top: 44px solid rgba(226, 232, 240, 0.08);
+}
+
+.sand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+}
+
+.sand-top {
+  top: 16px;
+  border-bottom: 36px solid #9fc4ff;
+  animation: sand-top 3.2s ease-in-out infinite;
+}
+
+.sand-bottom {
+  bottom: 16px;
+  border-top: 0 solid #9fc4ff;
+  animation: sand-bottom 3.2s ease-in-out infinite;
+}
+
+.sand-stream {
+  position: absolute;
+  top: 44px;
+  left: 50%;
+  width: 3px;
+  height: 0;
+  background: #9fc4ff;
+  transform: translateX(-50%);
+  animation: sand-stream 3.2s ease-in-out infinite;
+}
+
+@keyframes stay-tuned-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sand-top {
+  0% {
+    border-bottom-width: 36px;
+    opacity: 1;
+  }
+  100% {
+    border-bottom-width: 2px;
+    opacity: 0.35;
+  }
+}
+
+@keyframes sand-bottom {
+  0% {
+    border-top-width: 0;
+  }
+  100% {
+    border-top-width: 36px;
+  }
+}
+
+@keyframes sand-stream {
+  0% {
+    height: 0;
+    opacity: 0.6;
+  }
+  40% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    opacity: 0.6;
+  }
+}
+
 h1,
 h2,
 h3,
