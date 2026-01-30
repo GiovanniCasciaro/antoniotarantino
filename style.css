@@ -729,6 +729,10 @@ body.sm-open .sm-socials-link {
   .page-bnb .page-hero {
     padding-top: 48px;
   }
+
+  .hero-br {
+    display: block;
+  }
 }
 
 .brand-mark {
@@ -921,6 +925,10 @@ body.sm-open .sm-socials-link {
 
 .hero-visual {
   min-width: 0;
+}
+
+.hero-br {
+  display: none;
 }
 
 .eyebrow {
