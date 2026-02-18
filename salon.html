@@ -41,10 +41,36 @@
     <header class="header">
       <div class="container nav">
         <div class="brand">
-          <img class="brand-logo" src="media/antonio-logo.png" alt="Antonio Tarantino" />
-          <span class="brand-title">Antonio Tarantino</span>
+          <a href="index.html" class="brand-link">
+            <img class="brand-logo" src="media/antonio-logo.png" alt="Antonio Tarantino" />
+            <span class="brand-title">Antonio Tarantino</span>
+          </a>
         </div>
-        <h3 class="nav-title">Antonio Tarantino | Salone</h3>
+        <div class="header-desktop-inner">
+          <nav class="nav-desktop" aria-label="Menu principale">
+            <ul class="nav-desktop-list" role="list">
+              <li class="nav-item-with-preview">
+              <a href="index.html">
+                Biografia
+                <span class="nav-link-preview nav-link-preview--bio" aria-hidden="true">
+                  <img src="media/hover-biografia.png" alt="Antonio Tarantino – Biografia" />
+                </span>
+              </a>
+            </li>
+              <li><a href="profumo.html">Profumo</a></li>
+              <li><a href="moda.html">Moda</a></li>
+              <li><a href="salon.html">Hairstyle</a></li>
+              <li><a href="makeup.html">Make Up</a></li>
+              <li><a href="boutique.html">Concept</a></li>
+              <li><a href="bnb.html">Maison Boutique</a></li>
+              <li><a href="eventi.html">Event</a></li>
+            </ul>
+          </nav>
+          <a href="index.html" class="header-logo-center">
+            <img src="media/antonio-logo.png" alt="Antonio Tarantino" class="header-logo-img" />
+          </a>
+        </div>
+        <h3 class="nav-title">Antonio Tarantino | Hairstyle</h3>
         <button
           class="sm-toggle"
           id="menuToggle"
@@ -67,7 +93,7 @@
       </div>
     </header>
     <div class="responsive-logo-wrap" aria-hidden="true">
-      <img src="media/antonio-logo-removebg-preview.png" alt="Antonio Tarantino" class="responsive-logo" />
+      <img src="media/antonio-logo.png" alt="Antonio Tarantino" class="responsive-logo" />
     </div>
     <div class="sm-prelayers" aria-hidden="true">
       <div class="sm-prelayer" style="background: #b9c7ff"></div>
@@ -83,35 +109,45 @@
       </div>
       <div class="sm-panel-inner">
         <ul class="sm-panel-list" role="list" data-numbering>
-          <li class="sm-panel-itemWrap sm-panel-itemWrap--active" style="--sm-delay: 0.08s">
-            <a class="sm-panel-item" href="salon.html" data-index="1">
-              <span class="sm-panel-itemLabel">Salone</span>
-            </a>
-          </li>
-          <li class="sm-panel-divider" aria-hidden="true"></li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.16s">
-            <a class="sm-panel-item" href="index.html" data-index="2">
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.08s">
+            <a class="sm-panel-item" href="index.html" data-index="1">
               <span class="sm-panel-itemLabel">Biografia</span>
             </a>
           </li>
+          <li class="sm-panel-divider" aria-hidden="true"></li>
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.12s">
+            <a class="sm-panel-item" href="profumo.html" data-index="2">
+              <span class="sm-panel-itemLabel">Profumo</span>
+            </a>
+          </li>
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.16s">
+            <a class="sm-panel-item" href="moda.html" data-index="3">
+              <span class="sm-panel-itemLabel">Moda</span>
+            </a>
+          </li>
+          <li class="sm-panel-itemWrap sm-panel-itemWrap--active" style="--sm-delay: 0.2s">
+            <a class="sm-panel-item" href="salon.html" data-index="4">
+              <span class="sm-panel-itemLabel">Hairstyle</span>
+            </a>
+          </li>
           <li class="sm-panel-itemWrap" style="--sm-delay: 0.24s">
-            <a class="sm-panel-item" href="boutique.html" data-index="3">
-              <span class="sm-panel-itemLabel">Boutique</span>
+            <a class="sm-panel-item" href="makeup.html" data-index="5">
+              <span class="sm-panel-itemLabel">Make Up</span>
+            </a>
+          </li>
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.28s">
+            <a class="sm-panel-item" href="boutique.html" data-index="6">
+              <span class="sm-panel-itemLabel">Concept</span>
             </a>
           </li>
           <li class="sm-panel-itemWrap" style="--sm-delay: 0.32s">
-            <a class="sm-panel-item" href="bnb.html" data-index="4">
-              <span class="sm-panel-itemLabel">BnB</span>
+            <a class="sm-panel-item" href="bnb.html" data-index="7">
+              <span class="sm-panel-itemLabel">Maison Boutique</span>
             </a>
           </li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.4s">
-            <a class="sm-panel-item" href="eventi.html" data-index="5">
-              <span class="sm-panel-itemLabel">Eventi</span>
-            </a>
-          </li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.48s">
-            <a class="sm-panel-item" href="contatti.html" data-index="6">
-              <span class="sm-panel-itemLabel">Contatti</span>
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.36s">
+            <a class="sm-panel-item" href="eventi.html" data-index="8">
+              <span class="sm-panel-itemLabel">Event</span>
             </a>
           </li>
         </ul>

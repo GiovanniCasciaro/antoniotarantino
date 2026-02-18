@@ -41,11 +41,36 @@
     <header class="header">
       <div class="container nav">
         <div class="brand">
-          <img class="brand-logo" src="media/antonio-logo.png" alt="Antonio Tarantino" />
-          <span class="brand-title">Antonio Tarantino</span>
+          <a href="index.html" class="brand-link">
+            <img class="brand-logo" src="media/antonio-logo.png" alt="Antonio Tarantino" />
+            <span class="brand-title">Antonio Tarantino</span>
+          </a>
         </div>
-        <h3 class="nav-title">Antonio Tarantino | BnB</h3>
-   
+        <div class="header-desktop-inner">
+          <nav class="nav-desktop" aria-label="Menu principale">
+            <ul class="nav-desktop-list" role="list">
+              <li class="nav-item-with-preview">
+              <a href="index.html">
+                Biografia
+                <span class="nav-link-preview nav-link-preview--bio" aria-hidden="true">
+                  <img src="media/hover-biografia.png" alt="Antonio Tarantino – Biografia" />
+                </span>
+              </a>
+            </li>
+              <li><a href="profumo.html">Profumo</a></li>
+              <li><a href="moda.html">Moda</a></li>
+              <li><a href="salon.html">Hairstyle</a></li>
+              <li><a href="makeup.html">Make Up</a></li>
+              <li><a href="boutique.html">Concept</a></li>
+              <li><a href="bnb.html">Maison Boutique</a></li>
+              <li><a href="eventi.html">Event</a></li>
+            </ul>
+          </nav>
+          <a href="index.html" class="header-logo-center">
+            <img src="media/antonio-logo.png" alt="Antonio Tarantino" class="header-logo-img" />
+          </a>
+        </div>
+        <h3 class="nav-title">Antonio Tarantino | Maison Boutique</h3>
         <button
           class="sm-toggle"
           id="menuToggle"
@@ -68,7 +93,7 @@
       </div>
     </header>
     <div class="responsive-logo-wrap" aria-hidden="true">
-      <img src="media/antonio-logo-removebg-preview.png" alt="Antonio Tarantino" class="responsive-logo" />
+      <img src="media/antonio-logo.png" alt="Antonio Tarantino" class="responsive-logo" />
     </div>
     <div class="sm-prelayers" aria-hidden="true">
       <div class="sm-prelayer" style="background: #b9c7ff"></div>
@@ -84,35 +109,45 @@
       </div>
       <div class="sm-panel-inner">
         <ul class="sm-panel-list" role="list" data-numbering>
-          <li class="sm-panel-itemWrap sm-panel-itemWrap--active" style="--sm-delay: 0.08s">
-            <a class="sm-panel-item" href="bnb.html" data-index="1">
-              <span class="sm-panel-itemLabel">BnB</span>
-            </a>
-          </li>
-          <li class="sm-panel-divider" aria-hidden="true"></li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.16s">
-            <a class="sm-panel-item" href="index.html" data-index="2">
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.08s">
+            <a class="sm-panel-item" href="index.html" data-index="1">
               <span class="sm-panel-itemLabel">Biografia</span>
             </a>
           </li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.24s">
-            <a class="sm-panel-item" href="boutique.html" data-index="3">
-              <span class="sm-panel-itemLabel">Boutique</span>
+          <li class="sm-panel-divider" aria-hidden="true"></li>
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.12s">
+            <a class="sm-panel-item" href="profumo.html" data-index="2">
+              <span class="sm-panel-itemLabel">Profumo</span>
             </a>
           </li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.32s">
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.16s">
+            <a class="sm-panel-item" href="moda.html" data-index="3">
+              <span class="sm-panel-itemLabel">Moda</span>
+            </a>
+          </li>
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.2s">
             <a class="sm-panel-item" href="salon.html" data-index="4">
-              <span class="sm-panel-itemLabel">Salone</span>
+              <span class="sm-panel-itemLabel">Hairstyle</span>
             </a>
           </li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.4s">
-            <a class="sm-panel-item" href="eventi.html" data-index="5">
-              <span class="sm-panel-itemLabel">Eventi</span>
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.24s">
+            <a class="sm-panel-item" href="makeup.html" data-index="5">
+              <span class="sm-panel-itemLabel">Make Up</span>
             </a>
           </li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.48s">
-            <a class="sm-panel-item" href="contatti.html" data-index="6">
-              <span class="sm-panel-itemLabel">Contatti</span>
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.28s">
+            <a class="sm-panel-item" href="boutique.html" data-index="6">
+              <span class="sm-panel-itemLabel">Concept</span>
+            </a>
+          </li>
+          <li class="sm-panel-itemWrap sm-panel-itemWrap--active" style="--sm-delay: 0.32s">
+            <a class="sm-panel-item" href="bnb.html" data-index="7">
+              <span class="sm-panel-itemLabel">Maison Boutique</span>
+            </a>
+          </li>
+          <li class="sm-panel-itemWrap" style="--sm-delay: 0.36s">
+            <a class="sm-panel-item" href="eventi.html" data-index="8">
+              <span class="sm-panel-itemLabel">Event</span>
             </a>
           </li>
         </ul>
@@ -138,49 +173,120 @@
               riflette la filosofia estetica di Antonio Tarantino.
             </p>
             <div class="cta-group">
-              <a class="btn btn-primary" href="#bnbGallery">Scopri le suite</a>
+              <a class="btn btn-primary" href="#rooms">Scopri le suite</a>
               <a class="btn btn-ghost" href="#contatti">Prenota il soggiorno</a>
             </div>
           </div>
-          <div class="image-card">
-            <img src="media/WhatsApp Image 2026-01-22 at 09.57.05 (3).jpeg" alt="BnB – interni minimal con dettagli barocchi, tessuti naturali e luce calda" class="image-content" />
-       
-          </div>
+        
         </div>
       </section>
 
- 
-
-      <section class="section bnb-gallery-section">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">BnB</p>
-            <h2>Galleria fotografica</h2>
-            <p>Una selezione di ambienti, dettagli e atmosfere del BnB.</p>
-          </div>
-          <div class="bnb-gallery" id="bnbGallery" aria-label="Galleria immagini BnB"></div>
-        </div>
-      </section>
-
-      <section class="section section-alt">
-        <div class="container split">
-          <div>
+      <section class="section section-alt bnb-servizi">
+        <div class="container bnb-servizi__inner">
+          <div class="bnb-servizi__content">
             <p class="eyebrow">Servizi</p>
             <h2>Accoglienza personalizzata</h2>
             <p>
               Concierge dedicato, colazione su richiesta, experience private in citta
               e transfer personalizzati.
             </p>
-            <ul class="list">
-              <li>Colazione artigianale.</li>
-              <li>Servizi su misura per eventi privati.</li>
-              <li>Esperienze locali curate.</li>
-            </ul>
+         
           </div>
-          <div class="image-card">
-            <img src="media/WhatsApp Image 2026-01-22 at 09.57.09 (2).jpeg" alt="BnB Servizi – colazione gourmet, dettagli tessili, candele e ceramiche" class="image-content" />
-           
+        </div>
+      </section>
+
+      <!-- Le tre suite -->
+      <section id="rooms" class="section bnb-rooms-intro">
+        <div class="container bnb-rooms-intro__inner">
+          <p class="eyebrow">Maison Boutique</p>
+          <h2>Scopri le suite</h2>
+        </div>
+      </section>
+
+      <section class="section section-alt bnb-room">
+        <div class="container split">
+          <div class="bnb-room__text">
+            <h2 class="bnb-room__title">Suite Pietro</h2>
+            <p>Suite spaziosa con vista, arredi di design e bagno privato. Comfort e eleganza per un soggiorno indimenticabile.</p>
           </div>
+          <div class="bnb-room__carousel image-card bnb-room-carousel" data-room="pietro" data-images='[{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31 (1).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31 (2).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31.jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (1).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (2).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (3).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (4).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (5).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (6).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (7).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (8).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (9).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32.jpeg","alt":"Suite Pietro"}]'>
+            <div class="bnb-room-carousel__track">
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31 (1).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31 (2).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31.jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (1).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (2).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (3).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (4).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (5).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (6).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (7).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (8).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (9).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32.jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
+            </div>
+            <div class="bnb-room-carousel__dots" aria-hidden="true"></div>
+          </div>
+          <div class="bnb-room__btn-wrap">
+            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn">Prenota</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section bnb-room">
+        <div class="container split">
+          <div class="bnb-room__text">
+            <h2 class="bnb-room__title">Suite Daniela</h2>
+            <p>La più ampia delle nostre suite: zona living, letto king size e dettagli artigianali. Ideale per chi cerca un'esperienza di lusso.</p>
+          </div>
+          <div class="bnb-room__carousel image-card bnb-room-carousel" data-room="daniela" data-images='[]' data-folder="media-stanza-daniela">
+            <div class="bnb-room-carousel__track">
+              <div class="bnb-room-carousel__slide"><div class="bnb-room-carousel__placeholder" aria-hidden="true">Immagini da media-stanza-daniela</div></div>
+            </div>
+            <div class="bnb-room-carousel__dots" aria-hidden="true"></div>
+          </div>
+          <div class="bnb-room__btn-wrap">
+            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn">Prenota</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt bnb-room">
+        <div class="container split">
+          <div class="bnb-room__text">
+            <h2 class="bnb-room__title">Suite Viviana</h2>
+            <p>Suite raffinata con luce naturale, tessuti pregiati e atmosfera intima. Perfetta per una fuga romantica nel Salento.</p>
+          </div>
+          <div class="bnb-room__carousel image-card bnb-room-carousel" data-room="viviana" data-images='[{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (1).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (2).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (3).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (4).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (5).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15.jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (1).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (2).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (3).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (4).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (5).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16.jpeg","alt":"Suite Viviana"}]'>
+            <div class="bnb-room-carousel__track">
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (1).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (2).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (3).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (4).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (5).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15.jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (1).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (2).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (3).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (4).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (5).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+              <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16.jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
+            </div>
+            <div class="bnb-room-carousel__dots" aria-hidden="true"></div>
+          </div>
+          <div class="bnb-room__btn-wrap">
+            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn">Prenota</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section bnb-booking-cta">
+        <div class="container section-head">
+          <h2>Prenota il tuo soggiorno</h2>
+          <p>Verifica disponibilità e tariffe direttamente su Booking.com.</p>
+          <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-booking">
+            Prenota su Booking
+          </a>
         </div>
       </section>
 
@@ -274,6 +380,6 @@
     <button type="button" id="backToTop" class="back-to-top" aria-label="Torna su" title="Torna su">↑</button>
 
     <script src="js/site.js" defer></script>
-    <script src="js/bnb-gallery.js" defer></script>
+    <script src="js/bnb-room-carousel.js" defer></script>
   </body>
 </html>

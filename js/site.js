@@ -4,17 +4,53 @@ document.addEventListener("DOMContentLoaded", () => {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // Smooth scroll per link in-page (es. #collezioni, #sfilate): transizione graduale
+  // Overlay di caricamento: schermo bianco + "Antonio Tarantino" tra una pagina e l’altra
+  const loadingOverlay = document.createElement("div");
+  loadingOverlay.id = "page-loading-overlay";
+  loadingOverlay.className = "page-loading-overlay";
+  loadingOverlay.setAttribute("aria-hidden", "true");
+  loadingOverlay.innerHTML = '<span class="page-loading-overlay__text">Antonio Tarantino</span>';
+  document.body.appendChild(loadingOverlay);
+
+  const showPageLoading = (href) => {
+    loadingOverlay.classList.add("is-visible");
+    loadingOverlay.setAttribute("aria-hidden", "false");
+    setTimeout(() => {
+      window.location.href = href;
+    }, 900);
+  };
+
+  const isInternalLink = (href) => {
+    if (!href || href === "#" || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) return false;
+    try {
+      const url = new URL(href, window.location.origin);
+      return url.origin === window.location.origin;
+    } catch {
+      return true;
+    }
+  };
+
   document.addEventListener("click", (e) => {
-    const link = e.target.closest('a[href^="#"]');
+    const link = e.target.closest("a");
     if (!link) return;
     const href = link.getAttribute("href");
+    if (!href) return;
     if (href === "#") return;
-    const target = document.querySelector(href);
-    if (!target) return;
+    if (href.startsWith("#")) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
+    if (link.target === "_blank" || link.hasAttribute("download")) return;
+    if (!isInternalLink(href)) return;
     e.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    showPageLoading(href);
   });
+
+  // Smooth scroll per link in-page (gestito sopra con #)
 
   const body = document.body;
   const toggle = document.getElementById("menuToggle");
@@ -49,10 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       event.preventDefault();
       setMenuOpen(false);
-      body.classList.add("sm-page-exit");
-      setTimeout(() => {
-        window.location.href = href;
-      }, 320);
+      showPageLoading(href);
     });
   }
 
@@ -61,6 +94,16 @@ document.addEventListener("DOMContentLoaded", () => {
       setMenuOpen(false);
     }
   });
+
+  // Header trasparente su desktop: aggiunge sfondo dopo lo scroll (stile Dolce & Gabbana)
+  const header = document.querySelector(".header");
+  if (header) {
+    const onScroll = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
 
   const cookieBanner = document.getElementById("cookieBanner");
   const cookieAccept = document.getElementById("cookieAccept");
