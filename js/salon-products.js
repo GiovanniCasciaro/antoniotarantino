@@ -1,40 +1,80 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  // Lista di tutte le immagini nella cartella media-salone
+document.addEventListener("DOMContentLoaded", () => {
+  // —— Hero carousel (page-hero) ——
+  const heroImageFiles = [
+    "WhatsApp Image 2026-02-22 at 19.42.29.jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.20.jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.21 (1).jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.21.jpeg"
+  ];
+  const heroTrack = document.getElementById("heroCarouselTrack");
+  const heroDotsContainer = document.getElementById("heroCarouselDots");
+  const heroPrev = document.querySelector(".hero-carousel__prev");
+  const heroNext = document.querySelector(".hero-carousel__next");
+  if (heroTrack && heroDotsContainer) {
+    heroImageFiles.forEach((file, index) => {
+      const slide = document.createElement("div");
+      slide.className = "hero-carousel__slide";
+      slide.setAttribute("data-index", index);
+      slide.setAttribute("id", "hero-slide-" + index);
+      const alt = index === 0 ? "Interno salone Antonio Tarantino – postazioni, prodotti haircare e illuminazione" : "Salone Antonio Tarantino – " + (index + 1);
+      slide.innerHTML = `<img src="media-salone/${file}" alt="${alt}" loading="${index === 0 ? "eager" : "lazy"}" class="hero-carousel__img image-content image-content--large" />`;
+      heroTrack.appendChild(slide);
+    });
+    let heroIndex = 0;
+    const heroTotal = heroImageFiles.length;
+    for (let i = 0; i < heroTotal; i++) {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "hero-carousel__dot" + (i === 0 ? " is-active" : "");
+      dot.setAttribute("aria-label", "Vai alla slide " + (i + 1));
+      dot.addEventListener("click", () => heroGoTo(i));
+      heroDotsContainer.appendChild(dot);
+    }
+    const heroSlides = heroTrack.querySelectorAll(".hero-carousel__slide");
+    const heroDots = heroDotsContainer.querySelectorAll(".hero-carousel__dot");
+    function heroGoTo(index) {
+      heroIndex = ((index % heroTotal) + heroTotal) % heroTotal;
+      heroTrack.style.transform = `translateX(-${heroIndex * 100}%)`;
+      heroSlides.forEach((s, i) => s.classList.toggle("is-active", i === heroIndex));
+      heroDots.forEach((d, i) => {
+        d.classList.toggle("is-active", i === heroIndex);
+      });
+    }
+    heroPrev?.addEventListener("click", () => heroGoTo(heroIndex - 1));
+    heroNext?.addEventListener("click", () => heroGoTo(heroIndex + 1));
+    heroGoTo(0);
+  }
+
+  // —— Prodotti carousel ——
   const imageFiles = [
-    "WhatsApp Image 2026-01-24 at 14.03.07.jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.11.jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.20 (1).jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.20 (2).jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.20.jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.21 (1).jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.21 (2).jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.21 (3).jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.21 (4).jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.21 (5).jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.21 (6).jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.21.jpeg",
-    "WhatsApp Image 2026-01-24 at 14.03.22.jpeg"
+    "WhatsApp Image 2026-02-23 at 14.34.20.jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.21 (1).jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.21.jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.22 (1).jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.22.jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.23 (1).jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.23.jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.24.jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.25 (1).jpeg",
+    "WhatsApp Image 2026-02-23 at 14.34.25.jpeg"
   ];
 
-  // Genera titoli e descrizioni placeholder basati sul nome del file
-  const generateProductInfo = (imageFile, index) => {
-    return {
-      title: "Inserisci nome corretto quando comunicato",
-      description: "Prodotto professionale per la cura dei capelli. Formulato con ingredienti selezionati per garantire risultati ottimali. Disponibile in salone su consulenza."
-    };
-  };
+  const products = imageFiles.map((imageFile, index) => ({
+    image: `media-salone/${imageFile}`,
+    title: "Prodotto in salone – " + (index + 1)
+  }));
 
-  // Crea i prodotti combinando immagini e dati
-  const products = imageFiles.map((imageFile, index) => {
-    const info = generateProductInfo(imageFile, index);
-    return {
-      image: `media-salone/${imageFile}`,
-      title: info.title,
-      description: info.description
-    };
-  });
+  const track = document.getElementById("salonCarouselTrack");
+  const dotsContainer = document.getElementById("salonCarouselDots");
+  const prevBtn = document.querySelector(".salon-carousel__prev");
+  const nextBtn = document.querySelector(".salon-carousel__next");
 
-  // Crea il lightbox per le immagini
+  if (!track || !dotsContainer) return;
+
+  let currentIndex = 0;
+  const total = products.length;
+
+  // Lightbox
   const lightbox = document.createElement("div");
   lightbox.className = "salon-product-lightbox";
   lightbox.setAttribute("role", "dialog");
@@ -69,51 +109,60 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   lightboxClose.addEventListener("click", closeLightbox);
   lightboxScrim.addEventListener("click", closeLightbox);
-  window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
-      closeLightbox();
-    }
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
   });
 
-  const createProductCard = (product, index) => {
-    const card = document.createElement("div");
-    card.className = "salon-product-card";
-    card.innerHTML = `
-      <div class="salon-product-card__image">
-        <img src="${product.image}" alt="${product.title}" loading="lazy" class="salon-product-card__img" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'300\\'%3E%3Crect fill=\\'%23e6edf7\\' width=\\'400\\' height=\\'300\\'/%3E%3Ctext fill=\\'%235a6b7a\\' font-family=\\'Arial\\' font-size=\\'18\\' x=\\'50%25\\' y=\\'50%25\\' text-anchor=\\'middle\\' dominant-baseline=\\'middle\\'%3E${encodeURIComponent(product.title)}%3C/text%3E%3C/svg%3E';" />
-      </div>
-      <div class="salon-product-card__content">
-        <h3 class="salon-product-card__title">${product.title}</h3>
-      </div>
+  // Build slides
+  products.forEach((product, index) => {
+    const slide = document.createElement("div");
+    slide.className = "salon-carousel__slide";
+    slide.setAttribute("data-index", index);
+    slide.setAttribute("role", "tabpanel");
+    slide.setAttribute("aria-roledescription", "slide");
+    slide.setAttribute("id", "salon-slide-" + index);
+    slide.innerHTML = `
+      <img src="${product.image}" alt="${product.title}" loading="${index === 0 ? "eager" : "lazy"}" class="salon-carousel__img" />
     `;
-
-    const image = card.querySelector(".salon-product-card__img");
-    image.style.cursor = "pointer";
-    image.addEventListener("click", () => {
-      openLightbox(product.image, product.title);
-    });
-
-    return card;
-  };
-
-  // Distribuisci i prodotti: 4 card per ogni sezione
-  const productsPerSection = 4;
-  const containers = [
-    document.getElementById("salonProducts1"),
-    document.getElementById("salonProducts2"),
-    document.getElementById("salonProducts3"),
-    document.getElementById("salonProducts4")
-  ];
-
-  containers.forEach((container, containerIndex) => {
-    if (!container) return;
-    
-    const startIndex = containerIndex * productsPerSection;
-    const endIndex = Math.min(startIndex + productsPerSection, products.length);
-    
-    for (let i = startIndex; i < endIndex; i++) {
-      const card = createProductCard(products[i], i);
-      container.appendChild(card);
-    }
+    const img = slide.querySelector(".salon-carousel__img");
+    img.addEventListener("click", () => openLightbox(product.image, product.title));
+    track.appendChild(slide);
   });
+
+  // Dots
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "salon-carousel__dot" + (i === 0 ? " is-active" : "");
+    dot.setAttribute("role", "tab");
+    dot.setAttribute("aria-selected", i === 0);
+    dot.setAttribute("aria-controls", "salon-slide-" + i);
+    dot.setAttribute("aria-label", "Vai alla slide " + (i + 1));
+    dot.addEventListener("click", () => goTo(i));
+    dotsContainer.appendChild(dot);
+  }
+
+  const slides = track.querySelectorAll(".salon-carousel__slide");
+  const dots = dotsContainer.querySelectorAll(".salon-carousel__dot");
+
+  function goTo(index) {
+    currentIndex = ((index % total) + total) % total;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    slides.forEach((s, i) => s.classList.toggle("is-active", i === currentIndex));
+    dots.forEach((d, i) => {
+      d.classList.toggle("is-active", i === currentIndex);
+      d.setAttribute("aria-selected", i === currentIndex);
+    });
+  }
+
+  prevBtn?.addEventListener("click", () => goTo(currentIndex - 1));
+  nextBtn?.addEventListener("click", () => goTo(currentIndex + 1));
+
+  // Keyboard
+  track.closest(".salon-carousel")?.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") { e.preventDefault(); goTo(currentIndex - 1); }
+    if (e.key === "ArrowRight") { e.preventDefault(); goTo(currentIndex + 1); }
+  });
+
+  goTo(0);
 });

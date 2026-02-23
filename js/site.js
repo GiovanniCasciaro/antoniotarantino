@@ -105,6 +105,22 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  // Desktop: pulsante comprimi navbar (nasconde logo, mantiene link)
+  const navCompressBtn = document.querySelector(".js-nav-compress");
+  if (navCompressBtn && header) {
+    const storageKey = "at_nav_compressed";
+    const isCompressed = () => sessionStorage.getItem(storageKey) === "1";
+    const setCompressed = (compressed) => {
+      sessionStorage.setItem(storageKey, compressed ? "1" : "0");
+      header.classList.toggle("is-compressed", compressed);
+      document.body.classList.toggle("header-nav-compressed", compressed);
+      navCompressBtn.setAttribute("aria-label", compressed ? "Espandi navbar" : "Comprimi navbar");
+      navCompressBtn.setAttribute("title", compressed ? "Espandi navbar" : "Comprimi navbar");
+    };
+    if (isCompressed()) setCompressed(true);
+    navCompressBtn.addEventListener("click", () => setCompressed(!isCompressed()));
+  }
+
   const cookieBanner = document.getElementById("cookieBanner");
   const cookieAccept = document.getElementById("cookieAccept");
   const cookieReject = document.getElementById("cookieReject");

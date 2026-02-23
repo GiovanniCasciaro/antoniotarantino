@@ -37,7 +37,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="page-salon">
     <header class="header">
       <div class="container nav">
         <div class="brand">
@@ -57,7 +57,6 @@
                 </span>
               </a>
             </li>
-              <li><a href="profumo.html">Profumo</a></li>
               <li><a href="moda.html">Moda</a></li>
               <li><a href="salon.html">Hairstyle</a></li>
               <li><a href="makeup.html">Make Up</a></li>
@@ -70,6 +69,10 @@
             <img src="media/antonio-logo.png" alt="Antonio Tarantino" class="header-logo-img" />
           </a>
         </div>
+        <button type="button" class="nav-compress-btn js-nav-compress" aria-label="Comprimi navbar" title="Comprimi navbar">
+          <span class="nav-compress-btn__icon nav-compress-btn__icon--collapse" aria-hidden="true">−</span>
+          <span class="nav-compress-btn__icon nav-compress-btn__icon--expand" aria-hidden="true">+</span>
+        </button>
         <h3 class="nav-title">Antonio Tarantino | Hairstyle</h3>
         <button
           class="sm-toggle"
@@ -116,12 +119,7 @@
           </li>
           <li class="sm-panel-divider" aria-hidden="true"></li>
           <li class="sm-panel-itemWrap" style="--sm-delay: 0.12s">
-            <a class="sm-panel-item" href="profumo.html" data-index="2">
-              <span class="sm-panel-itemLabel">Profumo</span>
-            </a>
-          </li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.16s">
-            <a class="sm-panel-item" href="moda.html" data-index="3">
+            <a class="sm-panel-item" href="moda.html" data-index="2">
               <span class="sm-panel-itemLabel">Moda</span>
             </a>
           </li>
@@ -164,22 +162,26 @@
 
     <main>
       <section class="page-hero">
-        <div class="container page-hero-grid">
-          <div>
+        <div class="container page-hero-grid page-hero-grid--salon">
+          <div class="page-hero__text">
             <p class="eyebrow">Salone</p>
             <h1>Hairstyling sartoriale, luce mediterranea</h1>
             <p class="subtitle">
               Un salone raffinato dove tecnica, cura del dettaglio e accoglienza
-              creano un'esperienza personalizzata.
+              creano un'esperienza personalizzata. Alcuni esempi dei nostri lavori  <br>  <p style="font-size: 2rem; text-align: center;">⬇️</p>
             </p>
-            <div class="cta-group">
-              <a class="btn btn-primary" href="#servizi">Scopri i servizi</a>
-              <a class="btn btn-ghost" href="#prodotti">Prodotti in salone</a>
-            </div>
           </div>
-          <div class="image-card">
-            <img src="media-salone/esempio2.jpg" alt="Interno salone Antonio Tarantino – postazioni, prodotti haircare e illuminazione" class="image-content image-content--large" />
-            <p style="padding-top: 10px;">Foto di esempio del salone, aggiungere quella vera quando viene mandata</p>
+          <div class="page-hero__visual">
+            <div class="hero-carousel image-card page-hero__image-wrap" id="heroCarousel" aria-label="Carosello hero salone">
+              <div class="hero-carousel__track" id="heroCarouselTrack"></div>
+              <button type="button" class="hero-carousel__btn hero-carousel__prev" aria-label="Slide precedente"><span aria-hidden="true">‹</span></button>
+              <button type="button" class="hero-carousel__btn hero-carousel__next" aria-label="Slide successiva"><span aria-hidden="true">›</span></button>
+              <div class="hero-carousel__dots" id="heroCarouselDots" role="tablist" aria-label="Slide carosello"></div>
+            </div>
+            <div class="cta-group cta-group--extended">
+              <a class="btn btn-primary btn--wide" href="#servizi">Scopri i servizi</a>
+              <a class="btn btn-ghost btn--wide" href="#prodotti">Prodotti in salone</a>
+            </div>
           </div>
         </div>
       </section>
@@ -223,30 +225,37 @@
               In salone proponiamo una selezione mirata di shampoo, maschere e trattamenti professionali, consigliati in base alle esigenze personali.
             </p>
           </div>
+        </div>
+        <div class="salon-carousel-wrap" id="salonCarouselWrap" aria-label="Carosello prodotti salone">
+          <div class="salon-carousel">
+            <div class="salon-carousel__track" id="salonCarouselTrack"></div>
+            <button type="button" class="salon-carousel__btn salon-carousel__prev" aria-label="Slide precedente">
+              <span aria-hidden="true">‹</span>
+            </button>
+            <button type="button" class="salon-carousel__btn salon-carousel__next" aria-label="Slide successiva">
+              <span aria-hidden="true">›</span>
+            </button>
+            <div class="salon-carousel__dots" id="salonCarouselDots" role="tablist" aria-label="Slide carosello"></div>
+          </div>
+        </div>
+        <div class="container">
           <div class="salon-product-descriptions">
             <div class="salon-product-description-item">
               <h3>Bain Volume</h3>
               <p>Bain Volume è una linea volumizzante professionale composta da shampoo e maschera, studiata per capelli fini e fragili, anche secchi o stressati da trattamenti chimici e termici. Idrata in profondità, rinforza la fibra capillare, protegge dall'umidità e aiuta a eliminare l'effetto crespo, lasciando i capelli più forti, morbidi e voluminosi.</p>
             </div>
-            <div class="salon-products-grid" id="salonProducts1"></div>
-            
             <div class="salon-product-description-item">
               <h3>Bain Hydratante</h3>
               <p>Bain Hydratante è una linea idratante professionale composta da shampoo e maschera, indicata per la cura dei capelli secchi. Idrata in profondità, dona morbidezza e brillantezza, rinforza il film idrolipidico e protegge la fibra capillare dalle aggressioni esterne, senza appesantire i capelli.</p>
             </div>
-            <div class="salon-products-grid" id="salonProducts2"></div>
-            
             <div class="salon-product-description-item">
               <h3>Bain Purifiant</h3>
               <p>Bain Purifiant è un bagno purificante per capelli e cuoio capelluto. Svolge un'azione riequilibrante, aiuta a regolare l'eccessiva produzione di sebo e dona spessore e volume ai capelli. La formula, arricchita con un complesso di undici aminoacidi, deterge in profondità lasciando il cuoio capelluto fresco e i capelli più corposi.</p>
             </div>
-            <div class="salon-products-grid" id="salonProducts3"></div>
-            
             <div class="salon-product-description-item">
               <h3>Intense Repair Treatment</h3>
               <p>Intense Repair Treatment è una linea idratante professionale studiata per rispondere ai bisogni dei capelli secchi, donando morbidezza e brillantezza. La sua formula profondamente idratante rinforza il film idrolipidico, previene la perdita di acqua e protegge la fibra capillare dalle aggressioni esterne, senza appesantire i capelli.</p>
             </div>
-            <div class="salon-products-grid" id="salonProducts4"></div>
           </div>
         </div>
       </section>

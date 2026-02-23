@@ -57,7 +57,6 @@
                 </span>
               </a>
             </li>
-              <li><a href="profumo.html">Profumo</a></li>
               <li><a href="moda.html">Moda</a></li>
               <li><a href="salon.html">Hairstyle</a></li>
               <li><a href="makeup.html">Make Up</a></li>
@@ -70,6 +69,10 @@
             <img src="media/antonio-logo.png" alt="Antonio Tarantino" class="header-logo-img" />
           </a>
         </div>
+        <button type="button" class="nav-compress-btn js-nav-compress" aria-label="Comprimi navbar" title="Comprimi navbar">
+          <span class="nav-compress-btn__icon nav-compress-btn__icon--collapse" aria-hidden="true">−</span>
+          <span class="nav-compress-btn__icon nav-compress-btn__icon--expand" aria-hidden="true">+</span>
+        </button>
         <h3 class="nav-title">Antonio Tarantino | Maison Boutique</h3>
         <button
           class="sm-toggle"
@@ -116,12 +119,7 @@
           </li>
           <li class="sm-panel-divider" aria-hidden="true"></li>
           <li class="sm-panel-itemWrap" style="--sm-delay: 0.12s">
-            <a class="sm-panel-item" href="profumo.html" data-index="2">
-              <span class="sm-panel-itemLabel">Profumo</span>
-            </a>
-          </li>
-          <li class="sm-panel-itemWrap" style="--sm-delay: 0.16s">
-            <a class="sm-panel-item" href="moda.html" data-index="3">
+            <a class="sm-panel-item" href="moda.html" data-index="2">
               <span class="sm-panel-itemLabel">Moda</span>
             </a>
           </li>
@@ -173,7 +171,7 @@
               riflette la filosofia estetica di Antonio Tarantino.
             </p>
             <div class="cta-group">
-              <a class="btn btn-primary" href="#rooms">Scopri le suite</a>
+              <a class="btn btn-primary" href="#stanze">Scopri le suite</a>
               <a class="btn btn-ghost" href="#contatti">Prenota il soggiorno</a>
             </div>
           </div>
@@ -181,34 +179,18 @@
         </div>
       </section>
 
-      <section class="section section-alt bnb-servizi">
-        <div class="container bnb-servizi__inner">
-          <div class="bnb-servizi__content">
-            <p class="eyebrow">Servizi</p>
-            <h2>Accoglienza personalizzata</h2>
-            <p>
-              Concierge dedicato, colazione su richiesta, experience private in citta
-              e transfer personalizzati.
-            </p>
-         
-          </div>
-        </div>
-      </section>
 
-      <!-- Le tre suite -->
-      <section id="rooms" class="section bnb-rooms-intro">
-        <div class="container bnb-rooms-intro__inner">
-          <p class="eyebrow">Maison Boutique</p>
-          <h2>Scopri le suite</h2>
-        </div>
-      </section>
+      
 
-      <section class="section section-alt bnb-room">
+
+
+      <section class="section section-alt bnb-room" id="stanze">
         <div class="container split">
+          <h2 class="bnb-room__title">Suite Pietro</h2>
           <div class="bnb-room__text">
-            <h2 class="bnb-room__title">Suite Pietro</h2>
             <p>Suite spaziosa con vista, arredi di design e bagno privato. Comfort e eleganza per un soggiorno indimenticabile.</p>
           </div>
+          <div class="bnb-room__media-row">
           <div class="bnb-room__carousel image-card bnb-room-carousel" data-room="pietro" data-images='[{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31 (1).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31 (2).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31.jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (1).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (2).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (3).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (4).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (5).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (6).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (7).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (8).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32 (9).jpeg","alt":"Suite Pietro"},{"src":"media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.32.jpeg","alt":"Suite Pietro"}]'>
             <div class="bnb-room-carousel__track">
               <div class="bnb-room-carousel__slide"><img src="media-stanza-pietro/WhatsApp Image 2026-02-17 at 14.20.31 (1).jpeg" alt="Suite Pietro" class="image-content" loading="lazy" /></div>
@@ -227,18 +209,31 @@
             </div>
             <div class="bnb-room-carousel__dots" aria-hidden="true"></div>
           </div>
+          <div class="bnb-room__amenities-side" aria-label="Servizi della struttura">
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">📶</span><span class="bnb-amenity__label">Wi-Fi</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">❄️</span><span class="bnb-amenity__label">Aria condizionata</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">☕</span><span class="bnb-amenity__label">Colazione</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🅿️</span><span class="bnb-amenity__label">Parcheggio</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🕐</span><span class="bnb-amenity__label">Reception</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🚭</span><span class="bnb-amenity__label">Non fumatori</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🌿</span><span class="bnb-amenity__label">Giardino</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🐕</span><span class="bnb-amenity__label">Animali ammessi</span></div>
+          </div>
+          </div>
           <div class="bnb-room__btn-wrap">
-            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn">Prenota</a>
+            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn bnb-room__btn--wide">Prenota su Booking</a>
+            <button type="button" class="btn btn-ghost bnb-room__btn-servizi js-bnb-servizi-open" aria-label="Apri servizi e comodità">Scopri i servizi</button>
           </div>
         </div>
       </section>
 
       <section class="section bnb-room">
         <div class="container split">
+          <h2 class="bnb-room__title">Suite Daniela</h2>
           <div class="bnb-room__text">
-            <h2 class="bnb-room__title">Suite Daniela</h2>
             <p>La più ampia delle nostre suite: zona living, letto king size e dettagli artigianali. Ideale per chi cerca un'esperienza di lusso.</p>
           </div>
+          <div class="bnb-room__media-row">
           <div class="bnb-room__carousel image-card bnb-room-carousel" data-room="daniela" data-images='[{"src":"media-stanza-daniela/foto1.jpeg","alt":"Suite Daniela"},{"src":"media-stanza-daniela/foto2.jpeg","alt":"Suite Daniela"},{"src":"media-stanza-daniela/foto3.jpeg","alt":"Suite Daniela"},{"src":"media-stanza-daniela/foto4.jpeg","alt":"Suite Daniela"},{"src":"media-stanza-daniela/foto5.jpeg","alt":"Suite Daniela"},{"src":"media-stanza-daniela/foto6.jpeg","alt":"Suite Daniela"},{"src":"media-stanza-daniela/foto7.jpeg","alt":"Suite Daniela"},{"src":"media-stanza-daniela/foto8.jpeg","alt":"Suite Daniela"},{"src":"media-stanza-daniela/foto9.jpeg","alt":"Suite Daniela"},{"src":"media-stanza-daniela/WhatsApp Image 2026-02-17 at 14.27.31.jpeg","alt":"Suite Daniela"}]'>
             <div class="bnb-room-carousel__track">
               <div class="bnb-room-carousel__slide"><img src="media-stanza-daniela/foto1.jpeg" alt="Suite Daniela" class="image-content" loading="lazy" /></div>
@@ -254,18 +249,31 @@
             </div>
             <div class="bnb-room-carousel__dots" aria-hidden="true"></div>
           </div>
+          <div class="bnb-room__amenities-side" aria-label="Servizi della struttura">
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">📶</span><span class="bnb-amenity__label">Wi-Fi</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">❄️</span><span class="bnb-amenity__label">Aria condizionata</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">☕</span><span class="bnb-amenity__label">Colazione</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🅿️</span><span class="bnb-amenity__label">Parcheggio</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🕐</span><span class="bnb-amenity__label">Reception</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🚭</span><span class="bnb-amenity__label">Non fumatori</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🌿</span><span class="bnb-amenity__label">Giardino</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🐕</span><span class="bnb-amenity__label">Animali ammessi</span></div>
+          </div>
+          </div>
           <div class="bnb-room__btn-wrap">
-            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn">Prenota</a>
+            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn bnb-room__btn--wide">Prenota su Booking</a>
+            <button type="button" class="btn btn-ghost bnb-room__btn-servizi js-bnb-servizi-open" aria-label="Apri servizi e comodità">Scopri i servizi</button>
           </div>
         </div>
       </section>
 
       <section class="section section-alt bnb-room">
         <div class="container split">
+          <h2 class="bnb-room__title">Suite Viviana</h2>
           <div class="bnb-room__text">
-            <h2 class="bnb-room__title">Suite Viviana</h2>
             <p>Suite raffinata con luce naturale, tessuti pregiati e atmosfera intima. Perfetta per una fuga romantica nel Salento.</p>
           </div>
+          <div class="bnb-room__media-row">
           <div class="bnb-room__carousel image-card bnb-room-carousel" data-room="viviana" data-images='[{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (1).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (2).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (3).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (4).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (5).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15.jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (1).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (2).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (3).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (4).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16 (5).jpeg","alt":"Suite Viviana"},{"src":"media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.16.jpeg","alt":"Suite Viviana"}]'>
             <div class="bnb-room-carousel__track">
               <div class="bnb-room-carousel__slide"><img src="media-stanza-viviana/WhatsApp Image 2026-02-17 at 14.24.15 (1).jpeg" alt="Suite Viviana" class="image-content" loading="lazy" /></div>
@@ -283,21 +291,41 @@
             </div>
             <div class="bnb-room-carousel__dots" aria-hidden="true"></div>
           </div>
+          <div class="bnb-room__amenities-side" aria-label="Servizi della struttura">
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">📶</span><span class="bnb-amenity__label">Wi-Fi</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">❄️</span><span class="bnb-amenity__label">Aria condizionata</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">☕</span><span class="bnb-amenity__label">Colazione</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🅿️</span><span class="bnb-amenity__label">Parcheggio</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🕐</span><span class="bnb-amenity__label">Reception</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🚭</span><span class="bnb-amenity__label">Non fumatori</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🌿</span><span class="bnb-amenity__label">Giardino</span></div>
+            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🐕</span><span class="bnb-amenity__label">Animali ammessi</span></div>
+          </div>
+          </div>
           <div class="bnb-room__btn-wrap">
-            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn">Prenota</a>
+            <a href="https://www.booking.com/hotel/it/maison-boutique-at.it.html?aid=304142&amp;label=gen173nr-10CAsocUIWbWFpc29uLWJvdXRpcXVlLWF0LXVub0gUWARocYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC68DxzAbAAgHSAiQ2NzAyNDhmNy00YmU5LTQ0YWUtOWUwMy1jNjgyOTBjZWEzYzPYAgHgAgE&amp;sid=be04f0b04465eaa64409894da22bdef3&amp;age=1&amp;all_sr_blocks=907922902_408708065_2_1_0&amp;checkin=2026-03-12&amp;checkout=2026-03-15&amp;dest_id=-128157&amp;dest_type=city&amp;dist=0&amp;group_adults=2&amp;group_children=1&amp;hapos=4&amp;highlighted_blocks=907922902_408708065_2_1_0&amp;hpos=4&amp;matching_block_id=907922902_408708065_2_1_0&amp;no_rooms=1&amp;req_adults=2&amp;req_age=1&amp;req_children=1&amp;room1=A%2CA%2C1&amp;sb_price_type=total&amp;sr_order=popularity&amp;sr_pri_blocks=907922902_408708065_2_1_0__32706&amp;srepoch=1771856006&amp;srpvid=d50363f773d708e8&amp;type=total&amp;ucfs=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn bnb-room__btn--wide">Prenota su Booking</a>
+            <button type="button" class="btn btn-ghost bnb-room__btn-servizi js-bnb-servizi-open" aria-label="Apri servizi e comodità">Scopri i servizi</button>
           </div>
         </div>
       </section>
 
-      <section class="section bnb-booking-cta">
-        <div class="container section-head">
-          <h2>Prenota il tuo soggiorno</h2>
-          <p>Verifica disponibilità e tariffe direttamente su Booking.com.</p>
-          <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-booking">
-            Prenota su Booking
-          </a>
+      <div id="bnbServiziModal" class="bnb-servizi-modal" role="dialog" aria-modal="true" aria-labelledby="bnbServiziModalTitle" aria-hidden="true">
+        <div class="bnb-servizi-modal__scrim" data-close="true" aria-hidden="true"></div>
+        <div class="bnb-servizi-modal__content">
+          <button type="button" class="bnb-servizi-modal__close" aria-label="Chiudi">×</button>
+          <h2 id="bnbServiziModalTitle" class="bnb-servizi-modal__title">Servizi e comodità</h2>
+          <div class="bnb-amenities bnb-servizi-modal__amenities">
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">📶</span><span class="bnb-amenity__label">Wi-Fi</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">❄️</span><span class="bnb-amenity__label">Aria condizionata</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">☕</span><span class="bnb-amenity__label">Colazione</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🅿️</span><span class="bnb-amenity__label">Parcheggio</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🕐</span><span class="bnb-amenity__label">Reception</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🚭</span><span class="bnb-amenity__label">Non fumatori</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🌿</span><span class="bnb-amenity__label">Giardino / Terrazza</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🐕</span><span class="bnb-amenity__label">Animali ammessi</span></div>
+          </div>
         </div>
-      </section>
+      </div>
 
       <section id="contatti" class="section">
         <div class="container split">
@@ -322,6 +350,7 @@
             <a href="https://wa.me/393386687558" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Scrivici su WhatsApp">
               Scrivici su WhatsApp
             </a>
+            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn bnb-room__btn--wide">Prenota su Booking</a>
           </div>
           <div class="map-card">
             <div class="map-card__header">Dove siamo</div>
@@ -390,5 +419,6 @@
 
     <script src="js/site.js" defer></script>
     <script src="js/bnb-room-carousel.js" defer></script>
+    <script src="js/bnb-servizi-modal.js" defer></script>
   </body>
 </html>

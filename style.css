@@ -372,6 +372,73 @@ img {
   .sm-toggle {
     display: none !important;
   }
+
+  /* Pulsante comprimi navbar: solo desktop */
+  .nav-compress-btn {
+    display: flex;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .nav-compress-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .nav-compress-btn__icon {
+    position: absolute;
+  }
+
+  .nav-compress-btn__icon--expand {
+    display: none;
+  }
+
+  .header.is-compressed .nav-compress-btn__icon--collapse {
+    display: none;
+  }
+
+  .header.is-compressed .nav-compress-btn__icon--expand {
+    display: block;
+  }
+
+  .header.is-compressed .header-logo-center {
+    display: none !important;
+  }
+
+  .header.is-compressed .nav {
+    min-height: 72px;
+    padding: 12px 0;
+  }
+}
+
+@media (min-width: 901px) {
+  body.header-nav-compressed {
+    padding-top: 72px !important;
+  }
+}
+
+.nav-compress-btn {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  .nav {
+    position: relative;
+  }
 }
 
 /* Mobile: pulsante menu visibile (desktop usa i link in navbar) */
@@ -1481,6 +1548,76 @@ body.bio-fullscreen-open {
   text-align: left;
 }
 
+/* Info generali – servizi struttura con box e icone */
+.bnb-info-generali {
+  background: #000;
+}
+
+.section-head--center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bnb-amenities {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 100px);
+  gap: 16px;
+  max-width: 720px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.bnb-amenity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  min-height: 82px;
+  padding: 12px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.bnb-amenity:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.bnb-amenity__icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.bnb-amenity__label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .bnb-amenities {
+    grid-template-columns: repeat(2, 100px);
+    gap: 12px;
+  }
+
+  .bnb-amenity {
+    width: 100px;
+    min-height: 82px;
+  }
+
+  .bnb-amenity__icon {
+    font-size: 1.5rem;
+  }
+}
+
 /* Blocco biografia unico */
 .bio-block {
   padding: 100px 0;
@@ -2022,6 +2159,158 @@ body.bio-fullscreen-open {
   max-width: 640px;
 }
 
+/* Salone: hero a colonna unica, foto e didascalia centrate, bottoni sotto ed estesi */
+.page-hero-grid--salon {
+  grid-template-columns: 1fr;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-hero-grid--salon .page-hero__text {
+  max-width: 100%;
+}
+
+.page-hero-grid--salon .page-hero__visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.page-hero-grid--salon .page-hero__image-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.page-hero-grid--salon .page-hero__image-wrap .image-content {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero carousel (salon page) */
+.hero-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-carousel__track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.hero-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-height: 0;
+}
+
+.hero-carousel__img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-carousel__btn:hover {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-carousel__prev {
+  left: 12px;
+}
+
+.hero-carousel__next {
+  right: 12px;
+}
+
+.hero-carousel__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.hero-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-carousel__dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hero-carousel__dot.is-active {
+  background: #fff;
+  transform: scale(1.15);
+}
+
+@media (max-width: 900px) {
+  .hero-carousel__img {
+    height: 380px;
+    max-height: 50vh;
+  }
+}
+
+.page-hero-grid--salon .page-hero__caption {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.page-hero-grid--salon .cta-group--extended {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.page-hero-grid--salon .cta-group--extended .btn--wide {
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -2560,45 +2849,256 @@ body.bio-fullscreen-open {
 
 .bnb-room__btn {
   display: inline-block;
-  margin-top: 1.25rem;
 }
 
-/* Suite: desktop = testo+button a sinistra, carousel a destra; mobile = testo, carousel, button */
+.bnb-room .split > .bnb-room__text .bnb-room__btn {
+  margin-top: 0;
+}
+
+/* Suite: card centrata – titolo, didascalia, foto e bottone esteso in colonna unica */
 .bnb-room .split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 0;
+}
+
+@media (min-width: 769px) {
+  .bnb-room .split {
+    max-width: 680px;
+  }
+}
+
+.bnb-room .split > .bnb-room__title {
+  margin: 0 0 8px;
+  text-align: center;
+  width: 100%;
 }
 
 .bnb-room .split > .bnb-room__text {
-  grid-column: 1;
-  grid-row: 1;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.bnb-room .split > .bnb-room__carousel {
-  grid-column: 2;
-  grid-row: 1;
+.bnb-room .split > .bnb-room__text > p {
+  margin: 0;
+}
+
+.bnb-room__media-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.bnb-room__amenities-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bnb-amenity--compact {
+  flex-direction: row;
+  padding: 8px 12px;
+  min-width: 0;
+  gap: 6px;
+}
+
+.bnb-amenity--compact .bnb-amenity__icon {
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+.bnb-amenity--compact .bnb-amenity__label {
+  font-size: 0.75rem;
+}
+
+.bnb-room__media-row .bnb-room__carousel {
+  width: 100%;
+  margin-bottom: 0;
 }
 
 .bnb-room .split > .bnb-room__btn-wrap {
-  grid-column: 1;
-  grid-row: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bnb-room__btn-servizi {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .bnb-room__media-row {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  /* Carousel grande: occupa tutto lo spazio disponibile, icone fuori dal box foto */
+  .bnb-room__media-row .bnb-room__carousel {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .bnb-room__amenities-side {
+    flex-shrink: 0;
+    width: 88px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-top: 4px;
+  }
+
+  .bnb-amenity--compact {
+    flex-direction: column;
+    width: 76px;
+    min-height: 82px;
+    padding: 10px 6px;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  .bnb-amenity--compact:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .bnb-amenity--compact .bnb-amenity__icon {
+    font-size: 1.35rem;
+    margin-bottom: 4px;
+  }
+
+  .bnb-amenity--compact .bnb-amenity__label {
+    font-size: 0.65rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 768px) {
+  .bnb-room__amenities-side {
+    display: none;
+  }
+
+  .bnb-room__btn-servizi {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+.bnb-room__btn--wide {
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .bnb-room .split {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 24px;
+    max-width: 100%;
+    gap: 0;
   }
 
-  .bnb-room .split > .bnb-room__text,
-  .bnb-room .split > .bnb-room__carousel,
-  .bnb-room .split > .bnb-room__btn-wrap {
-    grid-column: 1;
-    grid-row: auto;
+  .bnb-room .split > .bnb-room__text {
+    margin-bottom: 16px;
   }
+
+  .bnb-room__media-row .bnb-room__carousel {
+    margin-bottom: 0;
+  }
+}
+
+/* Modal servizi BnB (mobile) */
+.bnb-servizi-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.bnb-servizi-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.bnb-servizi-modal__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+
+.bnb-servizi-modal__content {
+  position: relative;
+  z-index: 1;
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.bnb-servizi-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.bnb-servizi-modal__close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bnb-servizi-modal__title {
+  margin: 0 40px 20px 0;
+  font-size: 1.25rem;
+}
+
+.bnb-servizi-modal__amenities {
+  margin: 0;
+}
+
+body.bnb-servizi-modal-open {
+  overflow: hidden;
 }
 
 /* Carousel camere */
@@ -2608,7 +3108,7 @@ body.bio-fullscreen-open {
   overflow: hidden;
   cursor: pointer;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
 }
 
 .bnb-room-carousel__track {
@@ -2639,8 +3139,8 @@ body.bio-fullscreen-open {
 }
 
 .bnb-room-carousel__placeholder {
-  min-height: 260px;
-  aspect-ratio: 4 / 3;
+  min-height: 200px;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3001,79 +3501,147 @@ body.bnb-lightbox-open {
   }
 }
 
-.salon-products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.salon-product-card {
-  background: var(--ivory);
-  border-radius: 0;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.salon-product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.4);
-}
-
-.salon-product-card__image {
+/* Carousel full-page prodotti salone */
+.salon-carousel-wrap {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: var(--beige);
+  height: 85vh;
+  min-height: 400px;
+  margin: 32px 0 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.salon-product-card__image img {
+.salon-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: scale(0.92);
+  transform-origin: center center;
+}
+
+.salon-carousel__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.salon-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  outline: none;
+}
+
+.salon-carousel__slide.is-active {
+  pointer-events: auto;
+}
+
+.salon-carousel__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.salon-product-card__content {
-  padding: 20px;
-  display: grid;
-  gap: 12px;
-}
-
-.salon-product-card__title {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-
-@media (max-width: 900px) {
-  .salon-products-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .salon-products-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
-
-.salon-product-card__image {
   cursor: pointer;
-}
-
-.salon-product-card__img {
   transition: transform 0.3s ease;
 }
 
-.salon-product-card__image:hover .salon-product-card__img {
-  transform: scale(1.05);
+.salon-carousel__img:hover {
+  transform: scale(1.02);
+}
+
+.salon-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.salon-carousel__btn:hover {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.salon-carousel__prev {
+  left: 20px;
+}
+
+.salon-carousel__next {
+  right: 20px;
+}
+
+.salon-carousel__dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.salon-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.salon-carousel__dot:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.salon-carousel__dot.is-active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .salon-carousel-wrap {
+    height: 70vh;
+    min-height: 320px;
+    margin-top: 24px;
+  }
+
+  .salon-carousel__btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .salon-carousel__prev {
+    left: 12px;
+  }
+
+  .salon-carousel__next {
+    right: 12px;
+  }
+
+  .salon-carousel__dots {
+    bottom: 16px;
+  }
 }
 
 .salon-product-lightbox {
