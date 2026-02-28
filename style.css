@@ -429,10 +429,15 @@ img {
   body.header-nav-compressed {
     padding-top: 72px !important;
   }
+  body.header-nav-compressed main {
+    padding-top: 0;
+  }
 }
 
-.nav-compress-btn {
-  display: none;
+@media (max-width: 900px) {
+  .nav-compress-btn {
+    display: none;
+  }
 }
 
 @media (min-width: 901px) {
@@ -2195,6 +2200,7 @@ body.bio-fullscreen-open {
 .hero-carousel {
   position: relative;
   width: 100%;
+  height: 560px;
   overflow: hidden;
 }
 
@@ -2205,9 +2211,13 @@ body.bio-fullscreen-open {
 }
 
 .hero-carousel__slide {
-  flex: 0 0 100%;
+  flex: 0 0 auto;
   width: 100%;
+  height: 560px;
+  min-width: 0;
   min-height: 0;
+  box-sizing: border-box;
+  background: var(--ivory);
 }
 
 .hero-carousel__img {
@@ -2216,6 +2226,7 @@ body.bio-fullscreen-open {
   object-fit: cover;
   object-position: center;
   display: block;
+  vertical-align: middle;
 }
 
 .hero-carousel__btn {
@@ -2282,9 +2293,61 @@ body.bio-fullscreen-open {
 }
 
 @media (max-width: 900px) {
+  .hero-carousel {
+    height: 380px;
+    min-height: 280px;
+  }
+  .hero-carousel__slide {
+    height: 380px;
+    min-height: 280px;
+  }
   .hero-carousel__img {
     height: 380px;
-    max-height: 50vh;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-carousel,
+  .hero-carousel__slide,
+  .hero-carousel__img {
+    height: 320px;
+    min-height: 240px;
+  }
+  .hero-carousel__btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+  .hero-carousel__prev { left: 8px; }
+  .hero-carousel__next { right: 8px; }
+  .hero-carousel__dots { bottom: 10px; gap: 6px; }
+  .hero-carousel__dot { width: 7px; height: 7px; }
+}
+
+@media (max-width: 400px) {
+  .hero-carousel,
+  .hero-carousel__slide,
+  .hero-carousel__img {
+    height: 260px;
+    min-height: 200px;
+  }
+}
+
+.page-hero-grid--salon .hero-price-cards {
+  gap: 12px;
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .page-hero-grid--salon .hero-price-cards {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+  }
+  .page-hero-grid--salon .hero-price-card {
+    min-width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -2293,6 +2356,43 @@ body.bio-fullscreen-open {
   font-size: 0.9rem;
   color: var(--muted);
   line-height: 1.5;
+}
+
+.hero-price-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.hero-price-card {
+  flex: 1;
+  min-width: 140px;
+  max-width: 220px;
+  padding: 18px 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-price-card__label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hero-price-card__price {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text);
 }
 
 .page-hero-grid--salon .cta-group--extended {
@@ -3109,6 +3209,10 @@ body.bnb-servizi-modal-open {
   cursor: pointer;
   width: 100%;
   aspect-ratio: 16 / 9;
+  min-height: 220px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  background: var(--ivory);
 }
 
 .bnb-room-carousel__track {
@@ -3116,7 +3220,7 @@ body.bnb-servizi-modal-open {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
@@ -3124,6 +3228,7 @@ body.bnb-servizi-modal-open {
   flex: 0 0 100%;
   min-width: 0;
   height: 100%;
+  overflow: hidden;
 }
 
 .bnb-room-carousel__slide img {
@@ -3131,11 +3236,12 @@ body.bnb-servizi-modal-open {
   height: 100%;
   display: block;
   object-fit: cover;
-  transition: transform 0.35s ease;
+  object-position: center;
+  transition: transform 0.4s ease;
 }
 
 .bnb-room-carousel:hover .bnb-room-carousel__slide img {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .bnb-room-carousel__placeholder {
@@ -3178,6 +3284,36 @@ body.bnb-servizi-modal-open {
   transform: scale(1.2);
 }
 
+/* BnB carousel responsive */
+@media (max-width: 768px) {
+  .bnb-room-carousel {
+    aspect-ratio: 16 / 10;
+    min-height: 200px;
+  }
+  .bnb-room-carousel__dots {
+    margin-top: 10px;
+    gap: 6px;
+  }
+  .bnb-room-carousel__dot {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bnb-room-carousel {
+    aspect-ratio: 4 / 3;
+    min-height: 180px;
+  }
+  .bnb-room-carousel__dots {
+    margin-top: 8px;
+  }
+  .bnb-room-carousel__dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
 /* Lightbox carousel camere */
 .bnb-room-lightbox {
   position: fixed;
@@ -3214,6 +3350,10 @@ body.bnb-servizi-modal-open {
   width: auto;
   height: auto;
   display: block;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .bnb-room-lightbox__close {
@@ -3504,13 +3644,17 @@ body.bnb-lightbox-open {
 /* Carousel full-page prodotti salone */
 .salon-carousel-wrap {
   width: 100%;
-  height: 85vh;
-  min-height: 400px;
-  margin: 32px 0 0;
-  background: var(--bg);
+  max-width: 1000px;
+  margin: 32px auto 0;
+  aspect-ratio: 4 / 3;
+  max-height: 58vh;
+  min-height: 280px;
+  background: var(--ivory);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .salon-carousel {
@@ -3518,7 +3662,6 @@ body.bnb-lightbox-open {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  transform: scale(0.92);
   transform-origin: center center;
 }
 
@@ -3535,6 +3678,10 @@ body.bnb-lightbox-open {
   height: 100%;
   position: relative;
   outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ivory);
 }
 
 .salon-carousel__slide.is-active {
@@ -3544,7 +3691,8 @@ body.bnb-lightbox-open {
 .salon-carousel__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   display: block;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -3618,29 +3766,73 @@ body.bnb-lightbox-open {
   transform: scale(1.2);
 }
 
+@media (max-width: 768px) {
+  .salon-carousel-wrap {
+    max-height: 52vh;
+    min-height: 260px;
+    margin-top: 24px;
+    padding: 0 20px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
 @media (max-width: 600px) {
   .salon-carousel-wrap {
-    height: 70vh;
-    min-height: 320px;
-    margin-top: 24px;
+    max-height: 48vh;
+    min-height: 220px;
+    margin-top: 20px;
+    padding: 0 16px;
   }
 
   .salon-carousel__btn {
     width: 40px;
     height: 40px;
     font-size: 1.5rem;
+    touch-action: manipulation;
   }
 
   .salon-carousel__prev {
-    left: 12px;
+    left: 10px;
   }
 
   .salon-carousel__next {
-    right: 12px;
+    right: 10px;
   }
 
   .salon-carousel__dots {
-    bottom: 16px;
+    bottom: 14px;
+    gap: 8px;
+  }
+
+  .salon-carousel__dot {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (max-width: 400px) {
+  .salon-carousel-wrap {
+    min-height: 200px;
+    padding: 0 12px;
+  }
+
+  .salon-carousel__btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.35rem;
+  }
+
+  .salon-carousel__prev { left: 8px; }
+  .salon-carousel__next { right: 8px; }
+
+  .salon-carousel__dots {
+    bottom: 10px;
+    gap: 6px;
+  }
+
+  .salon-carousel__dot {
+    width: 8px;
+    height: 8px;
   }
 }
 
@@ -3687,19 +3879,21 @@ body.bnb-lightbox-open {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid var(--border);
-  background: var(--ivory);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: #fff;
+  color: #1a1a1a;
   font-size: 1.5rem;
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
   z-index: 2;
 }
 
 .salon-product-lightbox__close:hover {
   transform: scale(1.1);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
 }
 
 .salon-product-lightbox__close:focus-visible {

@@ -1,27 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
   // —— Hero carousel (page-hero) ——
   const heroImageFiles = [
-    "WhatsApp Image 2026-02-22 at 19.42.29.jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.20.jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.21 (1).jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.21.jpeg"
+    "WhatsApp Image 2026-02-21 at 14.21.25.jpeg",
+    "WhatsApp Image 2026-02-21 at 14.21.26.jpeg",
+    "WhatsApp Image 2026-02-22 at 19.42.32.jpeg"
   ];
   const heroTrack = document.getElementById("heroCarouselTrack");
   const heroDotsContainer = document.getElementById("heroCarouselDots");
   const heroPrev = document.querySelector(".hero-carousel__prev");
   const heroNext = document.querySelector(".hero-carousel__next");
   if (heroTrack && heroDotsContainer) {
+    const heroTotal = heroImageFiles.length;
+    heroTrack.style.width = `${heroTotal * 100}%`;
+    const slideWidthPct = 100 / heroTotal;
     heroImageFiles.forEach((file, index) => {
       const slide = document.createElement("div");
       slide.className = "hero-carousel__slide";
       slide.setAttribute("data-index", index);
       slide.setAttribute("id", "hero-slide-" + index);
+      slide.style.width = `${slideWidthPct}%`;
       const alt = index === 0 ? "Interno salone Antonio Tarantino – postazioni, prodotti haircare e illuminazione" : "Salone Antonio Tarantino – " + (index + 1);
-      slide.innerHTML = `<img src="media-salone/${file}" alt="${alt}" loading="${index === 0 ? "eager" : "lazy"}" class="hero-carousel__img image-content image-content--large" />`;
+      slide.innerHTML = `<img src="nuovi-media/${file}" alt="${alt}" loading="${index === 0 ? "eager" : "lazy"}" class="hero-carousel__img image-content image-content--large" />`;
       heroTrack.appendChild(slide);
     });
     let heroIndex = 0;
-    const heroTotal = heroImageFiles.length;
     for (let i = 0; i < heroTotal; i++) {
       const dot = document.createElement("button");
       dot.type = "button";
@@ -34,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const heroDots = heroDotsContainer.querySelectorAll(".hero-carousel__dot");
     function heroGoTo(index) {
       heroIndex = ((index % heroTotal) + heroTotal) % heroTotal;
-      heroTrack.style.transform = `translateX(-${heroIndex * 100}%)`;
+      heroTrack.style.transform = `translateX(-${heroIndex * slideWidthPct}%)`;
       heroSlides.forEach((s, i) => s.classList.toggle("is-active", i === heroIndex));
       heroDots.forEach((d, i) => {
         d.classList.toggle("is-active", i === heroIndex);
