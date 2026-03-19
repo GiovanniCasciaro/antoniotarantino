@@ -2174,6 +2174,9 @@ body.bio-fullscreen-open {
 
 .page-hero-grid--salon .page-hero__text {
   max-width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-hero-grid--salon .page-hero__visual {
@@ -2183,6 +2186,29 @@ body.bio-fullscreen-open {
   text-align: center;
   width: 100%;
   margin-top: 24px;
+}
+
+/* Allineamento centrale testi/titoli pagina Salon */
+.page-salon .section-head,
+.page-salon .section-head--full {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-salon .section-head p,
+.page-salon .section-head h2,
+.page-salon .section-head--full p,
+.page-salon .section-head--full h2 {
+  text-align: center;
+}
+
+.page-salon .salon-product-description-item {
+  text-align: center;
+}
+
+.page-salon #contatti .split > div:first-child {
+  text-align: center;
 }
 
 .page-hero-grid--salon .page-hero__image-wrap {
@@ -2339,15 +2365,51 @@ body.bio-fullscreen-open {
   margin-top: 16px;
 }
 
+@media (min-width: 601px) and (max-width: 900px) {
+  .page-hero-grid--salon .hero-price-card {
+    max-width: 180px;
+  }
+}
+
 @media (max-width: 600px) {
   .page-hero-grid--salon .hero-price-cards {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
   }
   .page-hero-grid--salon .hero-price-card {
-    min-width: 100%;
-    max-width: 100%;
+    flex: 0 1 calc(33.33% - 6px);
+    min-width: 96px;
+    max-width: 180px;
+    padding: 7px 8px;
+    gap: 1px;
+  }
+  .page-hero-grid--salon .hero-price-card__label {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+  }
+  .page-hero-grid--salon .hero-price-card__price {
+    font-size: 0.9rem;
+    line-height: 1.1;
+  }
+}
+
+@media (max-width: 420px) {
+  .page-hero-grid--salon .hero-price-cards {
+    gap: 5px;
+  }
+  .page-hero-grid--salon .hero-price-card {
+    min-width: 88px;
+    max-width: 180px;
+    padding: 6px 6px;
+  }
+  .page-hero-grid--salon .hero-price-card__label {
+    font-size: 0.58rem;
+  }
+  .page-hero-grid--salon .hero-price-card__price {
+    font-size: 0.82rem;
   }
 }
 
@@ -2370,7 +2432,7 @@ body.bio-fullscreen-open {
 .hero-price-card {
   flex: 1;
   min-width: 140px;
-  max-width: 220px;
+  max-width: 160px;
   padding: 18px 24px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -3644,12 +3706,11 @@ body.bnb-lightbox-open {
 /* Carousel full-page prodotti salone */
 .salon-carousel-wrap {
   width: 100%;
-  max-width: 1000px;
-  margin: 32px auto 0;
+  max-width: 1040px;
+  margin: 40px auto 0;
   aspect-ratio: 4 / 3;
   max-height: 58vh;
   min-height: 280px;
-  background: var(--ivory);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3663,6 +3724,9 @@ body.bnb-lightbox-open {
   height: 100%;
   overflow: hidden;
   transform-origin: center center;
+  border-radius: 18px;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.22), rgba(10, 12, 18, 0.96));
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
 }
 
 .salon-carousel__track {
@@ -3681,7 +3745,7 @@ body.bnb-lightbox-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ivory);
+  background: transparent;
 }
 
 .salon-carousel__slide.is-active {
@@ -3710,35 +3774,37 @@ body.bnb-lightbox-open {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: rgba(0, 0, 0, 0.35);
-  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(5, 7, 12, 0.65);
+  color: #f9fafc;
   font-size: 1.75rem;
   line-height: 1;
   cursor: pointer;
   display: grid;
   place-items: center;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
 .salon-carousel__btn:hover {
-  background: rgba(0, 0, 0, 0.55);
-  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(5, 7, 12, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-50%) scale(1.03);
 }
 
 .salon-carousel__prev {
-  left: 20px;
+  left: 16px;
 }
 
 .salon-carousel__next {
-  right: 20px;
+  right: 16px;
 }
 
 .salon-carousel__dots {
   position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 20px;
+  left: 18px;
+  right: 18px;
   z-index: 2;
   display: flex;
   gap: 10px;
@@ -3769,8 +3835,8 @@ body.bnb-lightbox-open {
 @media (max-width: 768px) {
   .salon-carousel-wrap {
     max-height: 52vh;
-    min-height: 260px;
-    margin-top: 24px;
+    min-height: 240px;
+    margin-top: 28px;
     padding: 0 20px;
     aspect-ratio: 4 / 3;
   }
@@ -3778,10 +3844,10 @@ body.bnb-lightbox-open {
 
 @media (max-width: 600px) {
   .salon-carousel-wrap {
-    max-height: 48vh;
-    min-height: 220px;
+    max-height: 46vh;
+    min-height: 210px;
     margin-top: 20px;
-    padding: 0 16px;
+    padding: 0 14px;
   }
 
   .salon-carousel__btn {
@@ -3792,15 +3858,15 @@ body.bnb-lightbox-open {
   }
 
   .salon-carousel__prev {
-    left: 10px;
+    left: 8px;
   }
 
   .salon-carousel__next {
-    right: 10px;
+    right: 8px;
   }
 
   .salon-carousel__dots {
-    bottom: 14px;
+    bottom: 12px;
     gap: 8px;
   }
 
@@ -3973,6 +4039,302 @@ body.salon-lightbox-open {
     width: 36px;
     height: 36px;
     font-size: 1.3rem;
+  }
+}
+
+/* Make Up page */
+.makeup-hero {
+  display: grid;
+  gap: 28px;
+  justify-items: center;
+  text-align: center;
+}
+
+.makeup-hero__text {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.makeup-hero__text .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 760px;
+}
+
+.makeup-carousel-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.makeup-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.2), rgba(10, 12, 18, 0.95));
+  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.45);
+}
+
+.makeup-carousel__track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.makeup-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.makeup-carousel__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.makeup-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(6, 8, 14, 0.62);
+  color: #fff;
+  font-size: 1.65rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.makeup-carousel__btn:hover {
+  background: rgba(6, 8, 14, 0.88);
+  transform: translateY(-50%) scale(1.03);
+}
+
+.makeup-carousel__prev {
+  left: 12px;
+}
+
+.makeup-carousel__next {
+  right: 12px;
+}
+
+.makeup-carousel__dots {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 12px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.makeup-carousel__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(8, 10, 16, 0.55);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.82rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(6px);
+}
+
+.makeup-carousel__status-sep {
+  opacity: 0.6;
+}
+
+.makeup-carousel__status-current {
+  font-weight: 600;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .makeup-hero__text {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .makeup-carousel {
+    aspect-ratio: 4 / 3;
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 600px) {
+  .makeup-hero {
+    gap: 20px;
+  }
+
+  .makeup-hero__text {
+    padding: 0;
+  }
+
+  .makeup-hero__text h1 {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+
+  .makeup-hero__text .subtitle {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .makeup-carousel {
+    min-height: 220px;
+    border-radius: 12px;
+  }
+
+  .makeup-carousel__btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.4rem;
+  }
+
+  .makeup-carousel__prev {
+    left: 8px;
+  }
+
+  .makeup-carousel__next {
+    right: 8px;
+  }
+
+  .makeup-carousel__status {
+    font-size: 0.76rem;
+    min-height: 28px;
+    padding: 5px 10px;
+  }
+}
+
+.makeup-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.makeup-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.makeup-lightbox__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 8, 14, 0.9);
+  backdrop-filter: blur(4px);
+}
+
+.makeup-lightbox__content {
+  position: relative;
+  z-index: 1;
+  width: min(96vw, 1380px);
+  height: min(92vh, 920px);
+  display: grid;
+  place-items: center;
+}
+
+.makeup-lightbox__image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.makeup-lightbox__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.makeup-lightbox__nav {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.makeup-lightbox__arrow {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.makeup-lightbox__arrow[data-action="prev"] {
+  margin-left: 12px;
+}
+
+.makeup-lightbox__arrow[data-action="next"] {
+  margin-right: 12px;
+}
+
+body.makeup-lightbox-open {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .makeup-lightbox__content {
+    width: 98vw;
+    height: 88vh;
+  }
+
+  .makeup-lightbox__close {
+    width: 38px;
+    height: 38px;
+  }
+
+  .makeup-lightbox__arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1.45rem;
   }
 }
 

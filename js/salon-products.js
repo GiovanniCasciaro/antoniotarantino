@@ -49,16 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // —— Prodotti carousel ——
   const imageFiles = [
-    "WhatsApp Image 2026-02-23 at 14.34.20.jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.21 (1).jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.21.jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.22 (1).jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.22.jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.23 (1).jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.23.jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.24.jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.25 (1).jpeg",
-    "WhatsApp Image 2026-02-23 at 14.34.25.jpeg"
+    "WhatsApp Image 2026-03-10 at 16.16.16 (1).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.16 (2).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.16 (3).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.16.jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.17 (1).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.17 (2).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.17 (3).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.17 (4).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.17 (5).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.17 (6).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.17 (7).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.17 (8).jpeg",
+    "WhatsApp Image 2026-03-10 at 16.16.17.jpeg"
   ];
 
   const products = imageFiles.map((imageFile, index) => ({

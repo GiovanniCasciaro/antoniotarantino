@@ -103,11 +103,26 @@
 
     <main>
       <section class="page-hero">
-        <div class="container page-hero-grid">
-          <div>
+        <div class="container makeup-hero">
+          <div class="makeup-hero__text">
             <p class="eyebrow">Make Up</p>
-            <h1>Trucco e makeup</h1>
-            <p class="subtitle">Presto in arrivo.</p>
+            <h1>Eleganza, luce e stile su misura</h1>
+            <p class="subtitle">
+              Il servizio Make Up di Antonio Tarantino nasce per valorizzare ogni viso con equilibrio, tecnica e sensibilita estetica.
+              Realizziamo look per eventi, cerimonie, shooting e occasioni speciali, con attenzione a incarnato, volumi e personalità.
+            </p>
+          </div>
+          <div class="makeup-carousel-wrap" aria-label="Carosello make up">
+            <div class="makeup-carousel" id="makeupCarousel">
+              <div class="makeup-carousel__track" id="makeupCarouselTrack"></div>
+              <button type="button" class="makeup-carousel__btn makeup-carousel__prev" aria-label="Slide precedente">
+                <span aria-hidden="true">‹</span>
+              </button>
+              <button type="button" class="makeup-carousel__btn makeup-carousel__next" aria-label="Slide successiva">
+                <span aria-hidden="true">›</span>
+              </button>
+              <div class="makeup-carousel__dots" id="makeupCarouselDots" role="tablist" aria-label="Slide make up"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -146,5 +161,6 @@
     </div>
     <button type="button" id="backToTop" class="back-to-top" aria-label="Torna su" title="Torna su">↑</button>
     <script src="js/site.js" defer></script>
+    <script src="js/makeup-gallery.js" defer></script>
   </body>
 </html>
