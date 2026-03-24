@@ -159,29 +159,30 @@
 
     <main>
       <section class="page-hero">
-        <div class="container page-hero-grid">
-          <div>
-            <p class="eyebrow">Eventi</p>
-            <h1>Appuntamenti di stile e cultura</h1>
-            <p class="subtitle">
-              Calendario di incontri, presentazioni e momenti speciali curati da Antonio Tarantino.
-            </p>
-          </div>
-          <div class="image-card">
-            <img src="media/sfilata-esempio.png" alt="Sfilata Antonio Tarantino – Fashion Week Milano" class="image-content" />
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="section-head">
-            <p class="eyebrow">Calendario</p>
-            <h2>Luoghi, date e dettagli</h2>
-            <p>Ogni evento e raccontato con luogo, periodo e una breve descrizione.</p>
-          </div>
-          <div class="eventi-placeholder">
-            <h3 class="eventi-placeholder__title">Presto saranno annunciati i prossimi eventi, rimanete connessi</h3>
+        <div class="container" style="text-align: center; min-height: 58vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <p class="eyebrow">Eventi</p>
+          <h1>Link Eventi</h1>
+          <p class="subtitle">Clicca sul link per vedere il video dell'evento.</p>
+          <ul id="eventLinks" role="list" style="list-style: none; margin: 20px 0 0; padding: 0; width: min(100%, 520px); display: grid; gap: 12px;">
+            <li><a class="btn btn-primary" href="#" data-video-id="mOimhgVf0UU" style="display: block; width: 100%;">Fashion Week Dubai 2021</a></li>
+            <li><a class="btn btn-ghost" href="#" data-video-id="kM1eliupk3s" style="display: block; width: 100%;">Pomeriggio In Famiglia</a></li>
+            <li><a class="btn btn-primary" href="#" data-video-id="c5mfymszyWY" style="display: block; width: 100%;">Lecce Fashion Week 2024</a></li>
+            <li><a class="btn btn-ghost" href="#" data-video-id="JCzCa3-7Lx4" style="display: block; width: 100%;">Lecce Fashion Week</a></li>
+          </ul>
+          <div style="width: min(100%, 860px); margin-top: 20px;">
+            <div style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.35); background: rgba(255,255,255,0.04);">
+              <iframe
+                id="eventPreviewIframe"
+                title="Anteprima evento"
+                src="https://www.youtube.com/embed/mOimhgVf0UU?rel=0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+              ></iframe>
+            </div>
+            <p id="eventPreviewLabel" style="margin-top: 10px; color: var(--muted);">Anteprima: Fashion Week Dubai 2021</p>
           </div>
         </div>
       </section>
@@ -197,7 +198,7 @@
         </div>
         <div class="footer-activity">
           <h4>Salone</h4>
-          <p>Via della Bellezza 21, Lecce</p>
+          <p>Via Salvatore Grande 1a, Lecce</p>
           <p>Fisso <a href="tel:+390832439875" class="footer-tel">0832 439875</a> · Mobile <a href="tel:+393386687558" class="footer-tel">+39 338 668 7558</a> | salon@antoniotarantino.com</p>
           <p>Mar-Sab 09:00-20:00</p>
         </div>
@@ -240,6 +241,24 @@
 
     <button type="button" id="backToTop" class="back-to-top" aria-label="Torna su" title="Torna su">↑</button>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("#eventLinks a");
+        const iframe = document.getElementById("eventPreviewIframe");
+        const label = document.getElementById("eventPreviewLabel");
+        if (!links.length || !iframe || !label) return;
+        links.forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const videoId = (link.getAttribute("data-video-id") || "").trim();
+            if (!videoId) return;
+            iframe.src = `https://www.youtube.com/embed/${videoId}?rel=0`;
+            label.textContent = `Anteprima: ${link.textContent.trim()}`;
+            iframe.scrollIntoView({ behavior: "smooth", block: "center" });
+          });
+        });
+      });
+    </script>
     <script src="js/site.js" defer></script>
     <script src="js/events.js" defer></script>
   </body>
