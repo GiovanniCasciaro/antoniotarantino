@@ -92,10 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="makeup-lightbox__content">
       <button class="makeup-lightbox__close" type="button" aria-label="Chiudi">×</button>
       <img class="makeup-lightbox__image" alt="" />
-      <div class="makeup-lightbox__nav">
-        <button class="makeup-lightbox__arrow" data-action="prev" type="button" aria-label="Immagine precedente">‹</button>
-        <button class="makeup-lightbox__arrow" data-action="next" type="button" aria-label="Immagine successiva">›</button>
-      </div>
     </div>
   `;
   document.body.appendChild(lightbox);
@@ -103,8 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxImage = lightbox.querySelector(".makeup-lightbox__image");
   const lightboxClose = lightbox.querySelector(".makeup-lightbox__close");
   const lightboxScrim = lightbox.querySelector(".makeup-lightbox__scrim");
-  const lightboxPrev = lightbox.querySelector('[data-action="prev"]');
-  const lightboxNext = lightbox.querySelector('[data-action="next"]');
 
   const updateLightboxImage = () => {
     lightboxImage.src = `media-makeup/${imageFiles[currentIndex]}`;
@@ -147,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn?.addEventListener("click", () => goTo(currentIndex - 1));
   nextBtn?.addEventListener("click", () => goTo(currentIndex + 1));
 
-  // Click sull'immagine corrente apre il lightbox
+  // Click sull'immagine corrente apre l'anteprima
   carousel?.addEventListener("click", (event) => {
     if (event.target.closest(".makeup-carousel__btn")) return;
     const activeSlide = carousel.querySelector(".makeup-carousel__slide.is-active");
@@ -184,8 +178,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   lightboxClose?.addEventListener("click", closeLightbox);
   lightboxScrim?.addEventListener("click", closeLightbox);
-  lightboxPrev?.addEventListener("click", () => goTo(currentIndex - 1));
-  lightboxNext?.addEventListener("click", () => goTo(currentIndex + 1));
 
   // Swipe nel lightbox
   let lbTouchStartX = 0;
