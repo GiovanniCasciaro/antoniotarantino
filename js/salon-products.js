@@ -11,14 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroNext = document.querySelector(".hero-carousel__next");
   if (heroTrack && heroDotsContainer) {
     const heroTotal = heroImageFiles.length;
-    heroTrack.style.width = `${heroTotal * 100}%`;
-    const slideWidthPct = 100 / heroTotal;
     heroImageFiles.forEach((file, index) => {
       const slide = document.createElement("div");
       slide.className = "hero-carousel__slide";
       slide.setAttribute("data-index", index);
       slide.setAttribute("id", "hero-slide-" + index);
-      slide.style.width = `${slideWidthPct}%`;
       const alt = index === 0 ? "Interno salone Antonio Tarantino – postazioni, prodotti haircare e illuminazione" : "Salone Antonio Tarantino – " + (index + 1);
       slide.innerHTML = `<img src="nuovi-media/${file}" alt="${alt}" loading="${index === 0 ? "eager" : "lazy"}" class="hero-carousel__img image-content image-content--large" />`;
       heroTrack.appendChild(slide);
@@ -34,10 +31,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const heroSlides = heroTrack.querySelectorAll(".hero-carousel__slide");
     const heroDots = heroDotsContainer.querySelectorAll(".hero-carousel__dot");
+    const getCircularOffset = (index, active, length) => {
+      let delta = index - active;
+      if (delta > length / 2) delta -= length;
+      if (delta < -length / 2) delta += length;
+      return delta;
+    };
     function heroGoTo(index) {
       heroIndex = ((index % heroTotal) + heroTotal) % heroTotal;
-      heroTrack.style.transform = `translateX(-${heroIndex * slideWidthPct}%)`;
-      heroSlides.forEach((s, i) => s.classList.toggle("is-active", i === heroIndex));
+      heroSlides.forEach((slide, i) => {
+        const offset = getCircularOffset(i, heroIndex, heroTotal);
+        slide.classList.remove("is-active", "is-prev", "is-next", "is-far");
+        slide.style.visibility = "hidden";
+        if (offset === 0) slide.classList.add("is-active");
+        if (offset === -1) slide.classList.add("is-prev");
+        if (offset === 1) slide.classList.add("is-next");
+        if (Math.abs(offset) === 2) slide.classList.add("is-far");
+        if (Math.abs(offset) <= 2) slide.style.visibility = "visible";
+      });
       heroDots.forEach((d, i) => {
         d.classList.toggle("is-active", i === heroIndex);
       });

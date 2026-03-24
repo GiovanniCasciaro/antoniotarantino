@@ -63,6 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentIndex = 0;
   const total = imageFiles.length;
+  const getCircularOffset = (index, active, length) => {
+    let delta = index - active;
+    if (delta > length / 2) delta -= length;
+    if (delta < -length / 2) delta += length;
+    return delta;
+  };
 
   imageFiles.forEach((file, index) => {
     const slide = document.createElement("div");
@@ -120,7 +126,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function goTo(index) {
     currentIndex = ((index % total) + total) % total;
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    const slides = track.querySelectorAll(".makeup-carousel__slide");
+    slides.forEach((slide, i) => {
+      const offset = getCircularOffset(i, currentIndex, total);
+      slide.classList.remove("is-active", "is-prev", "is-next", "is-far");
+      slide.style.visibility = "hidden";
+      if (offset === 0) slide.classList.add("is-active");
+      if (offset === -1) slide.classList.add("is-prev");
+      if (offset === 1) slide.classList.add("is-next");
+      if (Math.abs(offset) === 2) slide.classList.add("is-far");
+      if (Math.abs(offset) <= 2) slide.style.visibility = "visible";
+    });
     const prev = ((currentIndex - 1 + total) % total) + 1;
     const curr = currentIndex + 1;
     const next = ((currentIndex + 1) % total) + 1;
@@ -134,6 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // Click sull'immagine corrente apre il lightbox
   carousel?.addEventListener("click", (event) => {
     if (event.target.closest(".makeup-carousel__btn")) return;
+    const activeSlide = carousel.querySelector(".makeup-carousel__slide.is-active");
+    if (!activeSlide || !activeSlide.contains(event.target)) return;
     openLightbox();
   });
 
