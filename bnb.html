@@ -162,37 +162,68 @@
 
     <main>
       <section class="page-hero">
-        <div class="container page-hero-grid">
-          <div>
-            <p class="eyebrow">BnB</p>
-            <h1>Un rifugio di lusso nel cuore di Lecce</h1>
+        <div class="container page-hero-grid page-hero-grid--bnb">
+          <div class="page-hero__text">
+            <p class="eyebrow">Maison Boutique</p>
+            <h1>Tre suite, un'ospitalità sartoriale nel Salento</h1>
             <p class="subtitle">
-              Suite raffinate, materiali naturali e una cura dell'ospitalita che
-              riflette la filosofia estetica di Antonio Tarantino.
+              A San Pietro in Lama, a pochi minuti da Lecce: camere luminose, dettagli curati
+              e prenotazione diretta su Booking.com.
             </p>
-            <div class="cta-group">
-              <a class="btn btn-primary" href="#stanze">Scopri le suite</a>
-              <a class="btn btn-ghost" href="#contatti">Prenota il soggiorno</a>
+            <div class="cta-group cta-group--bnb-hero">
+              <a class="btn btn-primary" href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer">Prenota su Booking</a>
+              <a class="btn btn-ghost" href="#stanze">Scegli la tua suite</a>
             </div>
           </div>
-        
         </div>
       </section>
 
-
-      
-
-
-
-      <section class="section section-alt bnb-room" id="stanze">
-        <div class="container split">
-          <h2 class="bnb-room__title">Suite Pietro</h2>
-          <div class="bnb-room__text">
-            <p>Suite spaziosa con vista, arredi di design e bagno privato. Comfort e eleganza per un soggiorno indimenticabile.</p>
+      <section class="section bnb-rooms-intro" aria-labelledby="bnb-intro-title">
+        <div class="container bnb-rooms-intro__inner">
+          <div class="section-head section-head--center">
+            <p class="eyebrow">La struttura</p>
+            <h2 id="bnb-intro-title">Le nostre suite</h2>
+            <p>
+              Tre ambienti distinti — Pietro, Daniela e Viviana — ciascuno con carattere proprio,
+              servizi in camera e accesso immediato alla prenotazione online.
+            </p>
+            <p class="bnb-rooms-intro__location">
+              <strong>Via Margherita di Savoia 57</strong> · San Pietro in Lama (LE)
+            </p>
           </div>
-          <div class="bnb-room__media-row">
+          <nav class="bnb-suites-nav" aria-label="Vai alla suite">
+            <a class="bnb-suites-nav__link" href="#suite-pietro">Suite Pietro</a>
+            <a class="bnb-suites-nav__link" href="#suite-daniela">Suite Daniela</a>
+            <a class="bnb-suites-nav__link" href="#suite-viviana">Suite Viviana</a>
+          </nav>
+          <div class="bnb-amenities" aria-label="Servizi della struttura">
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">📶</span><span class="bnb-amenity__label">Wi-Fi</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">❄️</span><span class="bnb-amenity__label">Aria condizionata</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">☕</span><span class="bnb-amenity__label">Colazione</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🅿️</span><span class="bnb-amenity__label">Parcheggio</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🕐</span><span class="bnb-amenity__label">Reception</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🚭</span><span class="bnb-amenity__label">Non fumatori</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🌿</span><span class="bnb-amenity__label">Giardino</span></div>
+            <div class="bnb-amenity"><span class="bnb-amenity__icon" aria-hidden="true">🐕</span><span class="bnb-amenity__label">Animali ammessi</span></div>
+          </div>
+          <button type="button" class="btn btn-ghost bnb-rooms-intro__servizi js-bnb-servizi-open">Tutti i servizi e comodità</button>
+        </div>
+      </section>
+
+      <div class="bnb-suites" id="stanze">
+      <article class="bnb-suite" id="suite-pietro">
+        <div class="container bnb-suite__inner">
+          <header class="bnb-suite__header">
+            <span class="bnb-suite__index" aria-hidden="true">01</span>
+            <div>
+              <h2 class="bnb-suite__title">Suite Pietro</h2>
+              <p class="bnb-suite__tagline">Spaziosa, luminosa, con bagno privato</p>
+            </div>
+          </header>
+          <div class="bnb-suite__grid">
+          <div class="bnb-suite__media">
           <section
-            class="c-carousel c-carousel--rooms bnb-room__carousel"
+            class="c-carousel c-carousel--rooms bnb-suite__carousel"
             data-carousel
             data-carousel-variant="rooms"
             data-carousel-loop="true"
@@ -223,33 +254,35 @@
             <button type="button" class="c-carousel__btn c-carousel__btn--next" aria-label="Foto successiva">›</button>
             <div class="c-carousel__dots" aria-label="Slide camera"></div>
           </section>
-          <div class="bnb-room__amenities-side" aria-label="Servizi della struttura">
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">📶</span><span class="bnb-amenity__label">Wi-Fi</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">❄️</span><span class="bnb-amenity__label">Aria condizionata</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">☕</span><span class="bnb-amenity__label">Colazione</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🅿️</span><span class="bnb-amenity__label">Parcheggio</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🕐</span><span class="bnb-amenity__label">Reception</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🚭</span><span class="bnb-amenity__label">Non fumatori</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🌿</span><span class="bnb-amenity__label">Giardino</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🐕</span><span class="bnb-amenity__label">Animali ammessi</span></div>
           </div>
+          <div class="bnb-suite__body">
+            <p class="bnb-suite__desc">Suite spaziosa con vista, arredi di design e bagno privato. Comfort e eleganza per un soggiorno indimenticabile.</p>
+            <ul class="bnb-suite__features" aria-label="Caratteristiche Suite Pietro">
+              <li>Vista e luce naturale</li>
+              <li>Bagno privato</li>
+              <li>Arredi di design</li>
+            </ul>
+            <div class="bnb-suite__actions">
+              <a href="https://www.booking.com/Share-KtvnCut" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-suite__btn">Prenota Suite Pietro</a>
+            </div>
           </div>
-          <div class="bnb-room__btn-wrap">
-            <a href="https://www.booking.com/Share-KtvnCut" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn bnb-room__btn--wide">Prenota su Booking</a>
-            <button type="button" class="btn btn-ghost bnb-room__btn-servizi js-bnb-servizi-open" aria-label="Apri servizi e comodità">Scopri i servizi</button>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="section bnb-room">
-        <div class="container split">
-          <h2 class="bnb-room__title">Suite Daniela</h2>
-          <div class="bnb-room__text">
-            <p>La più ampia delle nostre suite: zona living, letto king size e dettagli artigianali. Ideale per chi cerca un'esperienza di lusso.</p>
-          </div>
-          <div class="bnb-room__media-row">
+      <article class="bnb-suite bnb-suite--reverse" id="suite-daniela">
+        <div class="container bnb-suite__inner">
+          <header class="bnb-suite__header">
+            <span class="bnb-suite__index" aria-hidden="true">02</span>
+            <div>
+              <h2 class="bnb-suite__title">Suite Daniela</h2>
+              <p class="bnb-suite__tagline">La più ampia: living e letto king size</p>
+            </div>
+          </header>
+          <div class="bnb-suite__grid">
+          <div class="bnb-suite__media">
           <section
-            class="c-carousel c-carousel--rooms bnb-room__carousel"
+            class="c-carousel c-carousel--rooms bnb-suite__carousel"
             data-carousel
             data-carousel-variant="rooms"
             data-carousel-loop="true"
@@ -277,33 +310,35 @@
             <button type="button" class="c-carousel__btn c-carousel__btn--next" aria-label="Foto successiva">›</button>
             <div class="c-carousel__dots" aria-label="Slide camera"></div>
           </section>
-          <div class="bnb-room__amenities-side" aria-label="Servizi della struttura">
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">📶</span><span class="bnb-amenity__label">Wi-Fi</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">❄️</span><span class="bnb-amenity__label">Aria condizionata</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">☕</span><span class="bnb-amenity__label">Colazione</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🅿️</span><span class="bnb-amenity__label">Parcheggio</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🕐</span><span class="bnb-amenity__label">Reception</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🚭</span><span class="bnb-amenity__label">Non fumatori</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🌿</span><span class="bnb-amenity__label">Giardino</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🐕</span><span class="bnb-amenity__label">Animali ammessi</span></div>
           </div>
+          <div class="bnb-suite__body">
+            <p class="bnb-suite__desc">La più ampia delle nostre suite: zona living, letto king size e dettagli artigianali. Ideale per chi cerca un'esperienza di lusso.</p>
+            <ul class="bnb-suite__features" aria-label="Caratteristiche Suite Daniela">
+              <li>Zona living dedicata</li>
+              <li>Letto king size</li>
+              <li>Dettagli artigianali</li>
+            </ul>
+            <div class="bnb-suite__actions">
+              <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-suite__btn">Prenota Suite Daniela</a>
+            </div>
           </div>
-          <div class="bnb-room__btn-wrap">
-            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn bnb-room__btn--wide">Prenota su Booking</a>
-            <button type="button" class="btn btn-ghost bnb-room__btn-servizi js-bnb-servizi-open" aria-label="Apri servizi e comodità">Scopri i servizi</button>
           </div>
         </div>
-      </section>
+      </article>
 
-      <section class="section section-alt bnb-room">
-        <div class="container split">
-          <h2 class="bnb-room__title">Suite Viviana</h2>
-          <div class="bnb-room__text">
-            <p>Suite raffinata con luce naturale, tessuti pregiati e atmosfera intima. Perfetta per una fuga romantica nel Salento.</p>
-          </div>
-          <div class="bnb-room__media-row">
+      <article class="bnb-suite" id="suite-viviana">
+        <div class="container bnb-suite__inner">
+          <header class="bnb-suite__header">
+            <span class="bnb-suite__index" aria-hidden="true">03</span>
+            <div>
+              <h2 class="bnb-suite__title">Suite Viviana</h2>
+              <p class="bnb-suite__tagline">Atmosfera intima, tessuti pregiati</p>
+            </div>
+          </header>
+          <div class="bnb-suite__grid">
+          <div class="bnb-suite__media">
           <section
-            class="c-carousel c-carousel--rooms bnb-room__carousel"
+            class="c-carousel c-carousel--rooms bnb-suite__carousel"
             data-carousel
             data-carousel-variant="rooms"
             data-carousel-loop="true"
@@ -333,20 +368,30 @@
             <button type="button" class="c-carousel__btn c-carousel__btn--next" aria-label="Foto successiva">›</button>
             <div class="c-carousel__dots" aria-label="Slide camera"></div>
           </section>
-          <div class="bnb-room__amenities-side" aria-label="Servizi della struttura">
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">📶</span><span class="bnb-amenity__label">Wi-Fi</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">❄️</span><span class="bnb-amenity__label">Aria condizionata</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">☕</span><span class="bnb-amenity__label">Colazione</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🅿️</span><span class="bnb-amenity__label">Parcheggio</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🕐</span><span class="bnb-amenity__label">Reception</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🚭</span><span class="bnb-amenity__label">Non fumatori</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🌿</span><span class="bnb-amenity__label">Giardino</span></div>
-            <div class="bnb-amenity bnb-amenity--compact"><span class="bnb-amenity__icon" aria-hidden="true">🐕</span><span class="bnb-amenity__label">Animali ammessi</span></div>
+          </div>
+          <div class="bnb-suite__body">
+            <p class="bnb-suite__desc">Suite raffinata con luce naturale, tessuti pregiati e atmosfera intima. Perfetta per una fuga romantica nel Salento.</p>
+            <ul class="bnb-suite__features" aria-label="Caratteristiche Suite Viviana">
+              <li>Luce naturale</li>
+              <li>Tessuti pregiati</li>
+              <li>Ideale per coppie</li>
+            </ul>
+            <div class="bnb-suite__actions">
+              <a href="https://www.booking.com/hotel/it/maison-boutique-at.it.html" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-suite__btn">Prenota Suite Viviana</a>
+            </div>
           </div>
           </div>
-          <div class="bnb-room__btn-wrap">
-            <a href="https://www.booking.com/hotel/it/maison-boutique-at.it.html?aid=304142&amp;label=gen173nr-10CAsocUIWbWFpc29uLWJvdXRpcXVlLWF0LXVub0gUWARocYgBAZgBM7gBB8gBDNgBA-gBAfgBAYgCAagCAbgC68DxzAbAAgHSAiQ2NzAyNDhmNy00YmU5LTQ0YWUtOWUwMy1jNjgyOTBjZWEzYzPYAgHgAgE&amp;sid=be04f0b04465eaa64409894da22bdef3&amp;age=1&amp;all_sr_blocks=907922902_408708065_2_1_0&amp;checkin=2026-03-12&amp;checkout=2026-03-15&amp;dest_id=-128157&amp;dest_type=city&amp;dist=0&amp;group_adults=2&amp;group_children=1&amp;hapos=4&amp;highlighted_blocks=907922902_408708065_2_1_0&amp;hpos=4&amp;matching_block_id=907922902_408708065_2_1_0&amp;no_rooms=1&amp;req_adults=2&amp;req_age=1&amp;req_children=1&amp;room1=A%2CA%2C1&amp;sb_price_type=total&amp;sr_order=popularity&amp;sr_pri_blocks=907922902_408708065_2_1_0__32706&amp;srepoch=1771856006&amp;srpvid=d50363f773d708e8&amp;type=total&amp;ucfs=1" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn bnb-room__btn--wide">Prenota su Booking</a>
-            <button type="button" class="btn btn-ghost bnb-room__btn-servizi js-bnb-servizi-open" aria-label="Apri servizi e comodità">Scopri i servizi</button>
+        </div>
+      </article>
+      </div>
+
+      <section class="section section-alt bnb-booking-cta" aria-labelledby="bnb-booking-title">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <p class="eyebrow">Prenotazione</p>
+            <h2 id="bnb-booking-title">Disponibilità in tempo reale su Booking</h2>
+            <p>Scegli date e ospiti direttamente sulla piattaforma, con conferma immediata e recensioni verificate.</p>
+            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" class="btn btn-primary btn-booking" target="_blank" rel="noopener noreferrer">Vai a Booking.com</a>
           </div>
         </div>
       </section>
@@ -372,9 +417,9 @@
       <section id="contatti" class="section">
         <div class="container split">
           <div>
-            <p class="eyebrow">BnB</p>
-            <h2>Richiedi disponibilita</h2>
-            <p>Scrivici per ricevere un'offerta personalizzata.</p>
+            <p class="eyebrow">Maison Boutique</p>
+            <h2>Richiedi disponibilità</h2>
+            <p>Per domande o soggiorni su misura, scrivici: ti rispondiamo con un'offerta personalizzata.</p>
             <div class="contact-list">
               <div>
                 <strong>Telefono</strong>
@@ -392,7 +437,7 @@
             <a href="https://wa.me/393386687558" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Scrivici su WhatsApp">
               Scrivici su WhatsApp
             </a>
-            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer" class="btn btn-primary bnb-room__btn bnb-room__btn--wide">Prenota su Booking</a>
+            <a href="https://www.booking.com/hotel/it/maison-boutique-at-uno.it.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Prenota su Booking</a>
           </div>
           <div class="map-card">
             <div class="map-card__header">Dove siamo</div>
