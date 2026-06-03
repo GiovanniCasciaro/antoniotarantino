@@ -168,37 +168,14 @@
             <h1>Hairstyling sartoriale, luce mediterranea</h1>
             <p class="subtitle">
               Un salone raffinato dove tecnica, cura del dettaglio e accoglienza
-              creano un'esperienza personalizzata. Alcuni esempi dei nostri lavori  <br>  
+              creano un'esperienza personalizzata.
             </p>
           </div>
           <div class="page-hero__visual">
-            <section
-              class="c-carousel c-carousel--hero"
-              data-carousel
-              data-carousel-variant="editorial-3up"
-              data-carousel-loop="true"
-              aria-label="Carosello salone"
-            >
-              <div class="c-carousel__viewport">
-                <ul class="c-carousel__track" role="list">
-                  <li class="c-carousel__slide">
-                    <img src="nuovi-media/WhatsApp Image 2026-02-21 at 14.21.25.jpeg" alt="Interno salone Antonio Tarantino: postazioni e illuminazione" />
-                  </li>
-                  <li class="c-carousel__slide">
-                    <img src="nuovi-media/WhatsApp Image 2026-02-21 at 14.21.26.jpeg" alt="Salone Antonio Tarantino - dettaglio" />
-                  </li>
-                  <li class="c-carousel__slide">
-                    <img src="nuovi-media/WhatsApp Image 2026-02-22 at 19.42.32.jpeg" alt="Salone Antonio Tarantino - ambiente" />
-                  </li>
-                </ul>
-              </div>
-              <button type="button" class="c-carousel__btn c-carousel__btn--prev" aria-label="Slide precedente">‹</button>
-              <button type="button" class="c-carousel__btn c-carousel__btn--next" aria-label="Slide successiva">›</button>
-              <div class="c-carousel__counter" aria-live="polite"></div>
-            </section>
-            <div class="cta-group cta-group--extended">
-              <a class="btn btn-primary btn--wide" href="#servizi">Scopri i servizi</a>
-              <a class="btn btn-ghost btn--wide" href="#prodotti">Prodotti in salone</a>
+            <div class="cta-group cta-group--extended cta-group--row">
+              <a class="btn btn-primary" href="#servizi">Scopri i servizi</a>
+              <a class="btn btn-ghost" href="#prodotti">Prodotti in salone</a>
+              <a class="btn btn-ghost" href="#galleria">I nostri lavori</a>
             </div>
           </div>
         </div>
@@ -244,9 +221,9 @@
             </p>
           </div>
         </div>
-        <div class="container">
+        <div class="salon-products-carousel">
           <section
-            class="c-carousel c-carousel--gallery"
+            class="c-carousel c-carousel--gallery c-carousel--gallery-flush"
             data-carousel
             data-carousel-variant="gallery"
             data-carousel-loop="true"
@@ -275,20 +252,6 @@
             <div class="c-carousel__counter" aria-live="polite"></div>
           </section>
         </div>
-        <div class="hero-price-cards" aria-label="Prezzi prodotti">
-          <div class="hero-price-card">
-            <span class="hero-price-card__label">Shampoo</span>
-            <span class="hero-price-card__price">da 22€</span>
-          </div>
-          <div class="hero-price-card">
-            <span class="hero-price-card__label">Maschere</span>
-            <span class="hero-price-card__price">da 26€</span>
-          </div>
-          <div class="hero-price-card">
-            <span class="hero-price-card__label">Finish</span>
-            <span class="hero-price-card__price">da 26€</span>
-          </div>
-        </div>
         <div class="container">
           <div class="salon-product-descriptions">
             <div class="salon-product-description-item">
@@ -308,6 +271,65 @@
               <p>Intense Repair Treatment è una linea idratante professionale studiata per rispondere ai bisogni dei capelli secchi, donando morbidezza e brillantezza. La sua formula profondamente idratante rinforza il film idrolipidico, previene la perdita di acqua e protegge la fibra capillare dalle aggressioni esterne, senza appesantire i capelli.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="salon-prices" aria-label="Prezzi prodotti in salone">
+        <div class="container">
+          <div class="salon-prices__grid" role="list">
+            <article class="salon-price-card" role="listitem">
+              <span class="salon-price-card__label">Shampoo</span>
+              <span class="salon-price-card__price">da 22€</span>
+            </article>
+            <article class="salon-price-card" role="listitem">
+              <span class="salon-price-card__label">Maschere</span>
+              <span class="salon-price-card__price">da 26€</span>
+            </article>
+            <article class="salon-price-card" role="listitem">
+              <span class="salon-price-card__label">Finish</span>
+              <span class="salon-price-card__price">da 26€</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="galleria" class="section section-salon-showcase" aria-label="Galleria lavori salone">
+        <div class="container salon-showcase__inner">
+          <div class="section-head section-head--full">
+            <p class="eyebrow">Galleria</p>
+            <h2>Alcuni esempi dei nostri lavori</h2>
+          </div>
+          <section
+            class="c-carousel c-carousel--hero c-carousel--makeup c-carousel--editorial-center salon-showcase__carousel"
+            data-carousel
+            data-carousel-variant="editorial-3up"
+            data-carousel-loop="true"
+            data-carousel-lightbox="true"
+            aria-label="Galleria lavori hairstyling"
+          >
+            <div class="c-carousel__viewport">
+              <ul class="c-carousel__track" role="list">
+                <li class="c-carousel__slide">
+                  <img src="media-salone/nuovi-media/PHOTO-2026-03-11-17-38-19.jpg" alt="Acconciatura elegante biondo cenere - Antonio Tarantino" />
+                </li>
+                <li class="c-carousel__slide">
+                  <img src="media-salone/nuovi-media/PHOTO-2026-03-11-17-07-38.jpg" alt="Chignon couture con fiori - Antonio Tarantino" />
+                </li>
+                <li class="c-carousel__slide">
+                  <img src="media-salone/nuovi-media/PHOTO-2026-03-11-17-12-12.jpg" alt="Acconciatura sposa treccia e fiori - Antonio Tarantino" />
+                </li>
+                <li class="c-carousel__slide">
+                  <img src="media-salone/nuovi-media/PHOTO-2026-03-11-17-09-28.jpg" alt="Updo luminoso con fiori bianchi - Antonio Tarantino" />
+                </li>
+                <li class="c-carousel__slide">
+                  <img src="media-salone/nuovi-media/PHOTO-2026-03-11-17-09-16.jpg" alt="Styling evento raccolto morbido - Antonio Tarantino" />
+                </li>
+              </ul>
+            </div>
+            <button type="button" class="c-carousel__btn c-carousel__btn--prev" aria-label="Slide precedente">‹</button>
+            <button type="button" class="c-carousel__btn c-carousel__btn--next" aria-label="Slide successiva">›</button>
+            <div class="c-carousel__counter" aria-live="polite"></div>
+          </section>
         </div>
       </section>
 

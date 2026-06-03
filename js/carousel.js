@@ -42,7 +42,8 @@
       this.autoplayId = null;
       this.isVisible = false;
       this.slideWidth = 0;
-      this.mqMobile = window.matchMedia("(max-width: 900px)");
+      this.mqMobile = window.matchMedia("(max-width: 767px)");
+      this._navLock = false;
 
       this.prevBtn = root.querySelector(".c-carousel__btn--prev");
       this.nextBtn = root.querySelector(".c-carousel__btn--next");
@@ -152,15 +153,47 @@
       }
 
       if ("ResizeObserver" in window && this.viewport) {
+        let resizeTimer;
         this._resizeObs = new ResizeObserver(() => {
-          if (this._usesLinearLayout()) {
-            this.goTo(this.index, { instant: true });
-          }
+          window.clearTimeout(resizeTimer);
+          resizeTimer = window.setTimeout(() => {
+            if (this._isGalleryFlush()) {
+              this._syncFlushGallerySize();
+              this._renderLinear(true);
+            } else if (this._usesLinearLayout()) {
+              this.goTo(this.index, { instant: true });
+            }
+          }, 120);
         });
         this._resizeObs.observe(this.viewport);
       }
 
+      if (this._isGalleryFlush()) {
+        this.slides.forEach((slide) => {
+          const img = slide.querySelector("img");
+          if (!img) return;
+          img.addEventListener("load", () => this.goTo(this.index, { instant: true }));
+        });
+      }
+
       this.goTo(0, { instant: true });
+    }
+
+    _isGalleryFlush() {
+      return this.root.classList.contains("c-carousel--gallery-flush");
+    }
+
+    _syncFlushGallerySize() {
+      if (!this._isGalleryFlush()) return;
+      const img = this.slides[this.index]?.querySelector("img");
+      if (!img || !img.naturalWidth || !img.naturalHeight) return;
+      const maxW = Math.min(680, window.innerWidth * 0.9);
+      const maxH = Math.min(460, window.innerHeight * 0.52);
+      const scale = Math.min(1, maxW / img.naturalWidth, maxH / img.naturalHeight);
+      const w = Math.round(img.naturalWidth * scale);
+      const h = Math.round(img.naturalHeight * scale);
+      this.root.style.width = `${w}px`;
+      this.viewport.style.height = `${h}px`;
     }
 
     _usesLinearLayout() {
@@ -266,9 +299,6 @@
         const pre = new Image();
         pre.src = src;
       }
-      if (typeof img.decode === "function") {
-        img.decode().catch(() => {});
-      }
     }
 
     _layoutLinearTrack() {
@@ -297,6 +327,7 @@
     goTo(target, opts = {}) {
       const { instant = false } = opts;
       if (this.total <= 0) return;
+      if (!instant && this._navLock) return;
       let next;
       if (this.loop) {
         next = ((target % this.total) + this.total) % this.total;
@@ -319,6 +350,14 @@
       this._preload((next + 1) % this.total);
       this._preload((next - 1 + this.total) % this.total);
 
+      if (!instant && !this._isMobileSingle() && this.variant === "editorial-3up") {
+        this._navLock = true;
+        window.clearTimeout(this._navLockId);
+        this._navLockId = window.setTimeout(() => {
+          this._navLock = false;
+        }, 380);
+      }
+
       this.root.dispatchEvent(
         new CustomEvent("carousel:change", { detail: { index: this.index, total: this.total } })
       );
@@ -336,21 +375,19 @@
       this.slides.forEach((slide, i) => {
         const o = offset(i);
         slide.classList.remove("is-active", "is-prev", "is-next", "is-far");
-        slide.style.transition = instant ? "none" : "";
         if (o === 0) slide.classList.add("is-active");
         else if (o === -1) slide.classList.add("is-prev");
         else if (o === 1) slide.classList.add("is-next");
         else slide.classList.add("is-far");
       });
-      // forza reflow per ripristinare le transizioni dopo "instant"
       if (instant) {
         // eslint-disable-next-line no-unused-expressions
         this.track.offsetHeight;
-        this.slides.forEach((s) => (s.style.transition = ""));
       }
     }
 
     _renderLinear(instant) {
+      if (this._isGalleryFlush()) this._syncFlushGallerySize();
       const w = this._layoutLinearTrack();
       if (!w) {
         if (!this._linearLayoutPending) {
