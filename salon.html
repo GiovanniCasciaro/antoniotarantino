@@ -172,12 +172,30 @@
             </p>
           </div>
           <div class="page-hero__visual">
-            <div class="hero-carousel image-card page-hero__image-wrap" id="heroCarousel" aria-label="Carosello hero salone">
-              <div class="hero-carousel__track" id="heroCarouselTrack"></div>
-              <button type="button" class="hero-carousel__btn hero-carousel__prev" aria-label="Slide precedente"><span aria-hidden="true">‹</span></button>
-              <button type="button" class="hero-carousel__btn hero-carousel__next" aria-label="Slide successiva"><span aria-hidden="true">›</span></button>
-              <div class="hero-carousel__dots" id="heroCarouselDots" role="tablist" aria-label="Slide carosello"></div>
-            </div>
+            <section
+              class="c-carousel c-carousel--hero"
+              data-carousel
+              data-carousel-variant="editorial-3up"
+              data-carousel-loop="true"
+              aria-label="Carosello salone"
+            >
+              <div class="c-carousel__viewport">
+                <ul class="c-carousel__track" role="list">
+                  <li class="c-carousel__slide">
+                    <img src="nuovi-media/WhatsApp Image 2026-02-21 at 14.21.25.jpeg" alt="Interno salone Antonio Tarantino: postazioni e illuminazione" />
+                  </li>
+                  <li class="c-carousel__slide">
+                    <img src="nuovi-media/WhatsApp Image 2026-02-21 at 14.21.26.jpeg" alt="Salone Antonio Tarantino - dettaglio" />
+                  </li>
+                  <li class="c-carousel__slide">
+                    <img src="nuovi-media/WhatsApp Image 2026-02-22 at 19.42.32.jpeg" alt="Salone Antonio Tarantino - ambiente" />
+                  </li>
+                </ul>
+              </div>
+              <button type="button" class="c-carousel__btn c-carousel__btn--prev" aria-label="Slide precedente">‹</button>
+              <button type="button" class="c-carousel__btn c-carousel__btn--next" aria-label="Slide successiva">›</button>
+              <div class="c-carousel__counter" aria-live="polite"></div>
+            </section>
             <div class="cta-group cta-group--extended">
               <a class="btn btn-primary btn--wide" href="#servizi">Scopri i servizi</a>
               <a class="btn btn-ghost btn--wide" href="#prodotti">Prodotti in salone</a>
@@ -226,17 +244,36 @@
             </p>
           </div>
         </div>
-        <div class="salon-carousel-wrap" id="salonCarouselWrap" aria-label="Carosello prodotti salone">
-          <div class="salon-carousel">
-            <div class="salon-carousel__track" id="salonCarouselTrack"></div>
-            <button type="button" class="salon-carousel__btn salon-carousel__prev" aria-label="Slide precedente">
-              <span aria-hidden="true">‹</span>
-            </button>
-            <button type="button" class="salon-carousel__btn salon-carousel__next" aria-label="Slide successiva">
-              <span aria-hidden="true">›</span>
-            </button>
-            <div class="salon-carousel__dots" id="salonCarouselDots" role="tablist" aria-label="Slide carosello"></div>
-          </div>
+        <div class="container">
+          <section
+            class="c-carousel c-carousel--gallery"
+            data-carousel
+            data-carousel-variant="gallery"
+            data-carousel-loop="true"
+            data-carousel-lightbox="true"
+            aria-label="Carosello prodotti salone"
+          >
+            <div class="c-carousel__viewport">
+              <ul class="c-carousel__track" role="list">
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.16 (1).jpeg" alt="Prodotto in salone 1" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.16 (2).jpeg" alt="Prodotto in salone 2" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.16 (3).jpeg" alt="Prodotto in salone 3" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.16.jpeg" alt="Prodotto in salone 4" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.17 (1).jpeg" alt="Prodotto in salone 5" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.17 (2).jpeg" alt="Prodotto in salone 6" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.17 (3).jpeg" alt="Prodotto in salone 7" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.17 (4).jpeg" alt="Prodotto in salone 8" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.17 (5).jpeg" alt="Prodotto in salone 9" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.17 (6).jpeg" alt="Prodotto in salone 10" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.17 (7).jpeg" alt="Prodotto in salone 11" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.17 (8).jpeg" alt="Prodotto in salone 12" /></li>
+                <li class="c-carousel__slide"><img src="media-salone/WhatsApp Image 2026-03-10 at 16.16.17.jpeg" alt="Prodotto in salone 13" /></li>
+              </ul>
+            </div>
+            <button type="button" class="c-carousel__btn c-carousel__btn--prev" aria-label="Slide precedente">‹</button>
+            <button type="button" class="c-carousel__btn c-carousel__btn--next" aria-label="Slide successiva">›</button>
+            <div class="c-carousel__counter" aria-live="polite"></div>
+          </section>
         </div>
         <div class="hero-price-cards" aria-label="Prezzi prodotti">
           <div class="hero-price-card">
@@ -291,7 +328,8 @@
               </div>
               <div>
                 <strong>Indirizzo</strong>
-                <p>Inserire quando ti verrà detto</p>
+                <p>Via Salvatore Grande, 1a, Lecce
+                </p>
               </div>
             </div>
             <a href="https://wa.me/393386687558" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Scrivici su WhatsApp">
@@ -300,9 +338,19 @@
           </div>
           <div class="map-card">
             <div class="map-card__header">Dove siamo</div>
+            <div class="map-card__actions">
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Via+Salvatore+Grande+1a%2C+Lecce"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-card__directions"
+              >
+                Ottieni indicazioni stradali
+              </a>
+            </div>
             <iframe
               title="Mappa Salone Lecce"
-              src="https://maps.google.com/maps?q=Lecce%20Italia&t=m&z=14&output=embed&iwloc=near"
+              src="https://maps.google.com/maps?q=Via%20Salvatore%20Grande%201a%20Lecce&t=m&z=16&output=embed&iwloc=near"
               loading="lazy"
             ></iframe>
           </div>
@@ -364,6 +412,7 @@
     <button type="button" id="backToTop" class="back-to-top" aria-label="Torna su" title="Torna su">↑</button>
 
     <script src="js/site.js" defer></script>
-    <script src="js/salon-products.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
+    <script src="js/carousel.js" defer></script>
   </body>
 </html>
