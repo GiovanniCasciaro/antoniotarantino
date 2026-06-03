@@ -56,7 +56,6 @@
     _setup() {
       this.root.setAttribute("role", this.root.getAttribute("role") || "region");
       this.root.setAttribute("aria-roledescription", "carousel");
-      this.root.classList.add("c-carousel--ready");
       this.root.classList.add(`c-carousel--${this.variant}`);
 
       this.slides.forEach((slide, i) => {
@@ -145,7 +144,6 @@
         if (this.isVisible && this.autoplayMs > 0) this._startAutoplay();
       });
 
-      this._syncMobileMode();
       if (typeof this.mqMobile.addEventListener === "function") {
         this.mqMobile.addEventListener("change", () => this._onMobileBreakpoint());
       } else if (typeof this.mqMobile.addListener === "function") {
@@ -176,7 +174,11 @@
         });
       }
 
+      this._syncMobileMode();
       this.goTo(0, { instant: true });
+      requestAnimationFrame(() => {
+        this.root.classList.add("c-carousel--ready");
+      });
     }
 
     _isGalleryFlush() {
